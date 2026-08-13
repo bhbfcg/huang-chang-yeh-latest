@@ -32,9 +32,9 @@ function HeroCompare() {
 }
 
 const projects = [
-  { no: "01", type: "Cultural space", title: "畢業設計—茶藝館", meta: "Graduation project / Tea house", image: assets.teahouse, slug: "teahouse-graduation-project" },
-  { no: "02", type: "Architecture concept", title: "光引教堂—土地公廟", meta: "Sacred space / Concept study", image: assets.temple, slug: "light-church-tudigong-temple" },
-  { no: "03", type: "Residential visualization", title: "永吉路 3D 13 樓", meta: "Multi-room study / 3D", image: "/assets/picture1-yongji13-01.webp", slug: "yongji-13f-visualization" },
+  { no: "01", type: "Cultural space", title: "茶藝館", meta: "Cultural space / Tea house", image: assets.teahouse, slug: "teahouse-graduation-project" },
+  { no: "02", type: "Architecture concept", title: "土地公廟", meta: "Sacred space / Concept study", image: assets.temple, slug: "light-church-tudigong-temple" },
+  { no: "03", type: "Residential visualization", title: "璞真永吉 13 樓", meta: "Residential visualization / Interior study", image: "/assets/picture1-yongji13-01.webp", slug: "yongji-13f-visualization" },
 ];
 
 export default function Home() {

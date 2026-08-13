@@ -12,7 +12,7 @@ const routeMeta = (path: string) => {
     type: "website",
   };
   if (path === "/about") return { title: "About｜黃昌業 — 室內設計與空間視覺化", description: "認識黃昌業的設計背景、學習路徑與觀察空間的方法。", type: "profile" };
-  if (path === "/works") return { title: "Works｜黃昌業 — 室內設計與空間視覺化", description: "瀏覽茶藝館、旗袍店、土地公廟、住宅 3D、Rhino 形式研究與玉山社區視覺化作品。", type: "website" };
+  if (path === "/works") return { title: "Works｜黃昌業 — 室內設計與空間視覺化", description: "瀏覽茶藝館、旗袍店、土地公廟、璞真永吉 13 樓、Rhino 空間與形式研究及玉山社區作品。", type: "website" };
   if (path === "/services") return { title: "Services｜黃昌業 — 空間設計與 3D 視覺化", description: "空間氛圍、3D 視覺化與形式研究服務，從概念整理到可被討論的空間畫面。", type: "website" };
   if (path === "/process") return { title: "Process｜黃昌業 — Observe. Translate. Make clear.", description: "了解黃昌業如何從觀察、轉譯、視覺化到細節校準，整理設計流程。", type: "website" };
   if (path === "/contact") return { title: "Contact｜黃昌業 — 開始一段空間對話", description: "聯絡黃昌業，討論室內設計、空間視覺化、作品合作與設計提案。", type: "website" };
