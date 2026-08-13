@@ -5,11 +5,11 @@ import { useRef, useState } from "react";
 import { Link } from "wouter";
 
 const assets = {
-  heroBefore: "/manus-storage/coco-before_f8abc779.png",
-  heroAfter: "/manus-storage/coco-after-original_7955ae19.png",
-  teahouse: "/manus-storage/huang-teahouse-02_05996c5c.webp",
-  qipao: "/manus-storage/huang-qipao-01_4899a879.webp",
-  temple: "/manus-storage/huang-temple-01_851f73e7.webp",
+  heroBefore: "/assets/coco-before.png",
+  heroAfter: "/assets/coco-after-original.png",
+  teahouse: "/assets/huang-teahouse-02.webp",
+  qipao: "/assets/huang-qipao-01.webp",
+  temple: "/assets/huang-temple-01.webp",
 };
 
 function HeroCompare() {
@@ -35,7 +35,7 @@ function HeroCompare() {
 const projects = [
   { no: "01", type: "Cultural space", title: "畢業設計—茶藝館", meta: "Graduation project / Tea house", image: assets.teahouse, slug: "teahouse-graduation-project" },
   { no: "02", type: "Architecture concept", title: "光引教堂—土地公廟", meta: "Sacred space / Concept study", image: assets.temple, slug: "light-church-tudigong-temple" },
-  { no: "03", type: "Residential visualization", title: "永吉路 3D 13 樓", meta: "Multi-room study / 3D", image: "/manus-storage/huang-yongji-13-01_b6f4ee07.webp", slug: "yongji-13f-visualization" },
+  { no: "03", type: "Residential visualization", title: "永吉路 3D 13 樓", meta: "Multi-room study / 3D", image: "/assets/huang-yongji-13-01.webp", slug: "yongji-13f-visualization" },
 ];
 
 export default function Home() {

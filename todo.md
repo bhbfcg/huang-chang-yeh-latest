@@ -26,3 +26,6 @@
 - [x] 建立 `huang-chang-yeh` GitHub repository
 - [x] 加入 Netlify 建置設定與 SPA 路由重寫
 - [x] 推送目前網站並驗證遠端內容
+- [ ] 檢查 Netlify `/works` 圖片載入錯誤
+- [ ] 修正圖片資產引用與部署路徑
+- [ ] 推送修正並重新驗證 Netlify
