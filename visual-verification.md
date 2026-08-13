@@ -21,3 +21,7 @@ The desktop preview now presents **黃昌業 / Huang Chang-Yeh** in the header a
 The full-page Works view renders seven project cards from the PDF content: tea house, qipao retail, Tudigong temple concept, Yongji 18F, Yongji 13F, Rhino form study, and Yushan Community 3D. The tea-house detail route renders its selected images and optimized design concept rather than a 404.
 
 The About page includes the user-provided birth and education timeline. The Contact page uses the user-provided phone `0918-251-628` and email `18141570j@gmail.com` with working `tel:` and `mailto:` links.
+
+## Made with Manus badge check
+
+The preview DOM was inspected for text matching “Made with Manus” and for fixed-position elements. No matching text or project-owned floating badge was found; the only fixed element is the site header. If the badge remains visible in the management preview, it is likely preview/platform chrome rather than a component in the website source.
