@@ -46,3 +46,7 @@
 - [x] 篩選適合放入首頁、Works 與案例詳情頁的圖片
 - [x] 將選定圖片最佳化、加入網站資產並更新對應內容
 - [x] 驗證圖片在桌面／手機版、Netlify production 與 GitHub 備份中的呈現
+- [x] 盤點旗袍店、Rhino 模型與玉山社區 3D 的既有與原始圖片
+- [x] 確認圖片歸屬並各自建立高解析案例圖組
+- [x] 最佳化三組案例圖片並整合到 Works 與 Project Detail
+- [ ] 驗證三組案例的桌面／手機版與 Netlify production 圖片載入
