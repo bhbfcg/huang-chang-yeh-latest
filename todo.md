@@ -49,4 +49,4 @@
 - [x] 盤點旗袍店、Rhino 模型與玉山社區 3D 的既有與原始圖片
 - [x] 確認圖片歸屬並各自建立高解析案例圖組
 - [x] 最佳化三組案例圖片並整合到 Works 與 Project Detail
-- [ ] 驗證三組案例的桌面／手機版與 Netlify production 圖片載入
+- [x] 驗證三組案例的桌面／手機版與 Netlify production 圖片載入

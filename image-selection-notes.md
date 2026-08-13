@@ -60,4 +60,8 @@ PDF 原始圖片第三批確認 `page-037.png` 至 `page-051.jpg` 是永吉路 1
 
 第四批最後的 `page-060.jpg` 與 `page-061.jpg` 是玉山社區 3D 的客廳與餐廳視角，與現有 `huang-yushan-01.webp`／`huang-yushan-02.webp` 相同案例。PDF 本身只提供兩個玉山社區場景，因此可用高解析原始圖片重新輸出 WebP，但沒有第三張不同視角可追加。
 
+## 線上驗證
+
+Netlify production 最新 Published commit 為 `77b4d6a`。已開啟並確認 `/works/qipao-retail-interior`、`/works/rhino-form-study` 與 `/works/yushan-community-3d` 路由、標題、案例文案與 Hero 圖片均可正常呈現；三組案例新增的 14 張 WebP 圖片 URL 皆回傳 HTTP 200。
+
 第一、二批顯示資料夾前段幾乎全部屬於茶藝館／文化空間系列，包含入口、茶席、展示櫃、長廊、庭院與立面圖，沒有需要另外建立旗袍店的新影像群。`Enscape_2024-03-17-21-19-51`、`Enscape_2024-03-17-21-21-03`、`Enscape_2024-03-17-21-22-20` 是較明亮的完整室內廣角，可作為茶藝館案例的替代主圖候選；`Enscape_2024-03-17-22-15-31`、`Enscape_2024-03-17-22-18-25` 適合做長廊與壁畫細節。
