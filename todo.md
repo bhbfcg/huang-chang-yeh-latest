@@ -39,3 +39,10 @@
 - [ ] 更新 favicon、首屏與 SEO OG image 引用
 - [ ] 重新建置並確認畫質、檔案大小與頁面載入
 - [ ] 重試 checkpoint，若仍被阻擋再改用 File Storage
+- [ ] 推送最新 SEO／響應式／效能優化版本到 GitHub main
+- [ ] 確認 Netlify 自動建置來源與 production deploy
+- [ ] 重新檢查線上首頁、Works 與 Contact
+- [x] 盤點使用者提供的「圖片1」資料夾並建立圖片清單
+- [x] 篩選適合放入首頁、Works 與案例詳情頁的圖片
+- [x] 將選定圖片最佳化、加入網站資產並更新對應內容
+- [ ] 驗證圖片在桌面／手機版、Netlify production 與 GitHub 備份中的呈現
