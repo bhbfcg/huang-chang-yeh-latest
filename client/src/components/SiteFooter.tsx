@@ -5,14 +5,14 @@ import { Link } from "wouter";
 
 export default function SiteFooter() {
   return <footer className="site-footer">
-    <div className="section-label">COCO Design</div>
+    <div className="section-label">黃昌業 / Portfolio</div>
     <div className="footer-main">
-      <h2>Spaces made to feel calm, complete, and lived in.</h2>
+      <h2>Spaces shaped by light, material, and form.</h2>
       <div className="footer-links">
         <Link href="/about">About</Link><Link href="/works">Works</Link><Link href="/services">Services</Link><Link href="/process">Process</Link><Link href="/contact">Contact</Link>
-        <img className="footer-image" src="/manus-storage/coco-living_d389328c.png" alt="Sunlit reading corner interior" />
+        <img className="footer-image" src="/manus-storage/huang-yongji-13-02_00c562e4.webp" alt="永吉路 3D 13 樓住宅客廳" />
       </div>
     </div>
-    <div className="footer-bottom"><a className="footer-email" href="mailto:hello@cocodesign.studio">hello@cocodesign.studio</a><span className="footer-meta">Shanghai / Remote by appointment <ArrowUpRight size={13} /></span></div>
+    <div className="footer-bottom"><a className="footer-email" href="mailto:18141570j@gmail.com">18141570j@gmail.com</a><span className="footer-meta">嘉義出生 / 室內設計與空間可視化 <ArrowUpRight size={13} /></span></div>
   </footer>;
 }

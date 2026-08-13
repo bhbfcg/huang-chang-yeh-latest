@@ -5,9 +5,9 @@ import { Link } from "wouter";
 
 export default function SiteHeader() {
   return <header className="site-header">
-    <Link className="brand" href="/" aria-label="COCO Design home">
+    <Link className="brand" href="/" aria-label="黃昌業作品集首頁">
       <img className="brand-mark" src="/manus-storage/coco-mark_2ebf3290.png" alt="" />
-      <span className="brand-wordmark"><span>COCO</span><span>DESIGN</span></span>
+      <span className="brand-wordmark"><span>HUANG</span><span>CHANG-YEH</span></span>
     </Link>
     <nav className="site-nav" aria-label="Primary navigation">
       <Link href="/about">About</Link>
