@@ -1,0 +1,7 @@
+// COCO Design style reminder: service pages should translate a complex design process
+// into calm, concrete deliverables without losing the studio's poetic restraint.
+import { Link } from "wouter";
+
+export default function Services() {
+  return <div className="site-page section-cream"><section className="page-hero"><div className="section-label">Services</div><h1>From first sketch<br />to final atmosphere.</h1><p>We bring together planning, renovation and styling so each layer of the home feels like part of the same thought.</p></section><section className="services-preview section-sand"><div className="section-label">What we do</div><div className="services-content"><div><h2>One clear line<br />from idea to site.</h2><p className="process-lead">Our studio works across the decisions that make a room feel resolved: space planning, material balance, lighting, storage, furniture and the final details.</p></div><div className="service-list"><div><span>01</span><div><h3>Interior planning</h3><p>從格局、動線到材質比例，建立空間的長期使用秩序。</p></div></div><div><span>02</span><div><h3>Renovation design</h3><p>整合硬裝、燈光、收納與軟裝，讓舊空間獲得清晰的新生活方式。</p></div></div><div><span>03</span><div><h3>Styling direction</h3><p>為住宅、樣板間與商業空間完成家具、藝術品和陳列落地。</p></div></div></div></div></section><section className="start-project section-dark"><div className="section-label">Start a project</div><div className="start-content"><h2>Let us shape<br />your next interior.</h2><Link className="button button-light" href="/contact">Get in touch</Link></div></section></div>;
+}

@@ -1,40 +1,42 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
+// COCO Design style reminder: reproduce the reference site's warm editorial minimalism,
+// asymmetric spaces, crisp type, restrained motion, and studio-first navigation.
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-
+import NotFound from "./pages/NotFound";
+import Process from "./pages/Process";
+import ProjectDetail from "./pages/ProjectDetail";
+import Services from "./pages/Services";
+import Works from "./pages/Works";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/works" component={Works} />
+      <Route path="/works/:slug" component={ProjectDetail} />
+      <Route path="/services" component={Services} />
+      <Route path="/process" component={Process} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
+      <SiteHeader />
+      <main>
+        <Router />
+      </main>
+      <SiteFooter />
     </ErrorBoundary>
   );
 }
