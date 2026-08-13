@@ -1,17 +1,20 @@
 // COCO Design style reminder: reproduce the reference site's warm editorial minimalism,
 // asymmetric spaces, crisp type, restrained motion, and studio-first navigation.
+import { lazy, Suspense } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Process from "./pages/Process";
-import ProjectDetail from "./pages/ProjectDetail";
-import Services from "./pages/Services";
-import Works from "./pages/Works";
+import SiteSeo from "./components/SiteSeo";
+
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Home = lazy(() => import("./pages/Home"));
+const Process = lazy(() => import("./pages/Process"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Services = lazy(() => import("./pages/Services"));
+const Works = lazy(() => import("./pages/Works"));
 
 function Router() {
   return (
@@ -32,10 +35,9 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
+      <SiteSeo />
       <SiteHeader />
-      <main>
-        <Router />
-      </main>
+      <main><Suspense fallback={<div className="route-loading" aria-live="polite">Loading page…</div>}><Router /></Suspense></main>
       <SiteFooter />
     </ErrorBoundary>
   );

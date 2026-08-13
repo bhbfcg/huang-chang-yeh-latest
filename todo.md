@@ -29,3 +29,13 @@
 - [ ] 檢查 Netlify `/works` 圖片載入錯誤
 - [ ] 修正圖片資產引用與部署路徑
 - [ ] 推送修正並重新驗證 Netlify
+- [x] 盤點桌面與手機版字體尺寸、行高、斷行與導覽可用性
+- [x] 優化桌面／手機字體階層、觸控目標與響應式間距
+- [x] 補齊 title、description、canonical、Open Graph、Twitter Card、robots 與 sitemap
+- [x] 加入 Person／CreativeWork 結構化資料與圖片 alt 文字
+- [x] 優化圖片 lazy loading、尺寸提示、資產壓縮與字體載入策略
+- [ ] 驗證桌面／手機截圖、SEO 標籤、正式建置與 Netlify production
+- [ ] 將超過 1MB 的 coco-after-original.png 與 coco-mark.png 壓縮為較輕資產
+- [ ] 更新 favicon、首屏與 SEO OG image 引用
+- [ ] 重新建置並確認畫質、檔案大小與頁面載入
+- [ ] 重試 checkpoint，若仍被阻擋再改用 File Storage

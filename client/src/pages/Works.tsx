@@ -1,5 +1,4 @@
-// 黃昌業作品集 style reminder: organize the work by scale and medium, keeping the
-// same editorial image rhythm while making the portfolio breadth immediately legible.
+// COCO editorial system: a calm case-study index with generous whitespace and staggered image rhythm.
 import { Link } from "wouter";
 
 export const portfolioProjects = [
@@ -13,5 +12,5 @@ export const portfolioProjects = [
 ];
 
 export default function Works() {
-  return <div className="site-page section-sand"><section className="page-hero section-cream"><div className="section-label">Selected works</div><h1>Different scales,<br />one way of looking.</h1><p>從文化空間、建築概念到住宅 3D 與形式研究，作品記錄我如何觀察並整理空間。</p><div className="text-link-row"><a href="#cultural">Cultural</a><a href="#residential">Residential</a><a href="#form">Form study</a></div></section><section className="works-preview section-sand"><div className="project-grid">{portfolioProjects.map((project, index) => <Link className={`project-card project-${(index % 3) + 1}`} href={`/works/${project.slug}`} key={project.slug}><div className="project-image-wrap"><img src={project.image} alt={project.title} /></div><div className="project-rule" /><div className="project-meta"><span>{project.no} / {project.type}</span><span>{project.meta}</span></div><h3>{project.title}</h3><p className="work-card-desc">{project.desc}</p></Link>)}</div></section></div>;
+  return <div className="site-page section-sand"><section className="page-hero section-cream"><div className="section-label">Selected works</div><h1>Different scales,<br />one way of looking.</h1><p>從文化空間、建築概念到住宅 3D 與形式研究，作品記錄我如何觀察並整理空間。</p><div className="text-link-row"><a href="#cultural">Cultural</a><a href="#residential">Residential</a><a href="#form">Form study</a></div></section><section className="works-preview section-sand"><div className="project-grid">{portfolioProjects.map((project, index) => <Link className={`project-card project-${(index % 3) + 1}`} href={`/works/${project.slug}`} key={project.slug}><div className="project-image-wrap"><img src={project.image} alt={`${project.title} — ${project.type}`} width={900} height={1125} loading={index < 3 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} decoding="async" /></div><div className="project-rule" /><div className="project-meta"><span>{project.no} / {project.type}</span><span>{project.meta}</span></div><h3>{project.title}</h3><p className="work-card-desc">{project.desc}</p></Link>)}</div></section></div>;
 }
