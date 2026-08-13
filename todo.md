@@ -18,3 +18,6 @@
 - [x] 恢復原始 COCO Design 首屏空屋、圓形揭露與原始文案
 - [x] 保留黃昌業作品集的 Works、About、Services、Process、Contact 與案例路由
 - [x] 驗證原始首屏與黃昌業作品集第二區塊之間的銜接
+- [ ] 建立 GitHub 私有 repository
+- [ ] 推送目前專案與提交紀錄
+- [ ] 驗證 GitHub 遠端分支與檔案狀態
