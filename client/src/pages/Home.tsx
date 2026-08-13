@@ -5,8 +5,8 @@ import { useRef, useState } from "react";
 import { Link } from "wouter";
 
 const assets = {
-  heroBefore: "/manus-storage/huang-yongji-13-01_b6f4ee07.webp",
-  heroAfter: "/manus-storage/huang-teahouse-01_36b04221.webp",
+  heroBefore: "/manus-storage/coco-before_f8abc779.png",
+  heroAfter: "/manus-storage/coco-after-original_7955ae19.png",
   teahouse: "/manus-storage/huang-teahouse-02_05996c5c.webp",
   qipao: "/manus-storage/huang-qipao-01_4899a879.webp",
   temple: "/manus-storage/huang-temple-01_851f73e7.webp",
@@ -14,7 +14,7 @@ const assets = {
 
 function HeroCompare() {
   const stageRef = useRef<HTMLDivElement>(null);
-  const [point, setPoint] = useState({ x: 58, y: 50 });
+  const [point, setPoint] = useState({ x: 42, y: 50 });
   const [isTouch, setIsTouch] = useState(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches);
   const [slider, setSlider] = useState(50);
   const updatePoint = (clientX: number, clientY: number) => {
@@ -22,12 +22,12 @@ function HeroCompare() {
     if (!bounds) return;
     setPoint({ x: ((clientX - bounds.left) / bounds.width) * 100, y: ((clientY - bounds.top) / bounds.height) * 100 });
   };
-  return <section className="hero-compare" ref={stageRef} onPointerEnter={(event) => { setIsTouch(event.pointerType !== "mouse"); updatePoint(event.clientX, event.clientY); }} onPointerMove={(event) => { if (event.pointerType !== "mouse" && !event.buttons) return; updatePoint(event.clientX, event.clientY); }} style={{ "--cursor-x": `${point.x}%`, "--cursor-y": `${point.y}%`, "--mobile-reveal": `${slider}%` } as React.CSSProperties} aria-label="黃昌業作品尺度轉換互動">
-    <img className="hero-image hero-before" src={assets.heroBefore} alt="永吉路住宅 3D 可視化" />
-    <img className={`hero-image hero-after ${isTouch ? "hero-after-touch" : ""}`} src={assets.heroAfter} alt="畢業設計茶藝館" />
+  return <section className="hero-compare" ref={stageRef} onPointerEnter={(event) => { setIsTouch(event.pointerType !== "mouse"); updatePoint(event.clientX, event.clientY); }} onPointerMove={(event) => { if (event.pointerType !== "mouse" && !event.buttons) return; updatePoint(event.clientX, event.clientY); }} style={{ "--cursor-x": `${point.x}%`, "--cursor-y": `${point.y}%`, "--mobile-reveal": `${slider}%` } as React.CSSProperties} aria-label="Before and after interior transformation">
+    <img className="hero-image hero-before" src={assets.heroBefore} alt="Before renovation" />
+    <img className={`hero-image hero-after ${isTouch ? "hero-after-touch" : ""}`} src={assets.heroAfter} alt="After renovation" />
     <div className="hero-overlay" />
-    <div className="hero-copy"><p className="eyebrow">HUANG CHANG-YEH / INTERIOR DESIGN</p><h1>Spaces,<br />shaped by light.</h1><p className="hero-cn">以光線、材料與形式，整理可以被感受的空間。</p><Link className="button button-dark" href="/works">View the portfolio <MoveRight size={14} /></Link></div>
-    <p className="hero-hint"><span className="hint-line" />{isTouch ? "Drag to move through spaces" : "Move cursor to move through spaces"}</p>
+    <div className="hero-copy"><p className="eyebrow">COCO DESIGN / INTERIOR STUDIO</p><h1>Designing Spaces,<br />Elevating Life.</h1><p className="hero-cn">設計空間，提升生活質感。</p><Link className="button button-dark" href="/works">View our works <MoveRight size={14} /></Link></div>
+    <p className="hero-hint"><span className="hint-line" />{isTouch ? "Drag to reveal after" : "Move cursor to reveal after"}</p>
     <div className="mobile-compare-control"><label htmlFor="compare-slider">Two scales</label><input id="compare-slider" type="range" min="0" max="100" value={slider} onChange={(event) => { setIsTouch(true); setSlider(Number(event.target.value)); }} /></div>
   </section>;
 }

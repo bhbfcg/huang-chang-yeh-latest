@@ -15,3 +15,6 @@
 - [x] 在 About 放入黃昌業的出生地、學歷與設計背景時間線
 - [x] 在 Contact 放入 0918-251-628 與 18141570j@gmail.com，並確認 mailto／tel 連結
 - [x] 將公開個人資料的呈現方式做成清楚但不過度曝露的作品集資訊區塊
+- [x] 恢復原始 COCO Design 首屏空屋、圓形揭露與原始文案
+- [x] 保留黃昌業作品集的 Works、About、Services、Process、Contact 與案例路由
+- [x] 驗證原始首屏與黃昌業作品集第二區塊之間的銜接
