@@ -20,9 +20,9 @@
 - [x] 驗證原始首屏與黃昌業作品集第二區塊之間的銜接
 - [ ] 建立 GitHub 私有 repository
 - [ ] 推送目前專案與提交紀錄
-- [ ] 驗證 GitHub 遠端分支與檔案狀態
-- [ ] 移除右下角 Made with Manus 浮動標籤
-- [ ] 驗證桌面／手機版移除後的版面與互動
-- [ ] 建立 `huang-chang-yeh` GitHub repository
-- [ ] 加入 Netlify 建置設定與 SPA 路由重寫
-- [ ] 推送目前網站並驗證遠端內容
+- [x] 驗證 GitHub 遠端分支與檔案狀態
+- [x] 移除右下角 Made with Manus 浮動標籤
+- [x] 驗證桌面／手機版移除後的版面與互動
+- [x] 建立 `huang-chang-yeh` GitHub repository
+- [x] 加入 Netlify 建置設定與 SPA 路由重寫
+- [x] 推送目前網站並驗證遠端內容
