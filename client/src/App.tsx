@@ -1,7 +1,7 @@
 // COCO Design style reminder: reproduce the reference site's warm editorial minimalism,
 // asymmetric spaces, crisp type, restrained motion, and studio-first navigation.
-import { lazy, Suspense } from "react";
-import { Route, Switch } from "wouter";
+import { lazy, Suspense, useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
@@ -32,12 +32,22 @@ function Router() {
   );
 }
 
+function RouteTransition() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <div key={location} className="route-transition"><Router /></div>;
+}
+
 function App() {
   return (
     <ErrorBoundary>
       <SiteSeo />
       <SiteHeader />
-      <main><Suspense fallback={<div className="route-loading" aria-live="polite">Loading page…</div>}><Router /></Suspense></main>
+      <main><Suspense fallback={<div className="route-loading" aria-live="polite">Loading page…</div>}><RouteTransition /></Suspense></main>
       <SiteFooter />
     </ErrorBoundary>
   );

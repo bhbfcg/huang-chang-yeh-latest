@@ -61,3 +61,12 @@
 - [x] 盤點 Netlify 入口 HTML、lazy route chunk 與 cache／版本同步問題
 - [x] 修正動態路由載入策略或建置資產設定，避免舊 chunk 造成白屏
 - [x] 驗證所有作品路由、production build 與 Netlify production
+- [x] 盤點圖片1新增茶藝館圖片並建立高解析 WebP 資產
+- [x] 將「永吉路 3D 18 樓」全站統一改為「璞真永吉 18 樓」
+- [x] 為案例圖片加入可鍵盤操作的 Lightbox 燈箱放大效果
+- [x] 為案例頁切換加入平滑轉場與載入狀態，並尊重 reduced motion
+- [ ] 驗證互動、響應式、production build、GitHub 與 Netlify deployment
+- [x] 盤點各案例圖片比例與敘事順序，定義雜誌風格圖組版型
+- [x] 為案例圖組加入跨欄、留白、編號與圖片說明的編排
+- [x] 為每組案例圖片補上對應的設計導讀與段落介紹
+- [ ] 驗證雜誌風格版面在桌面／手機版、Lightbox 與 reduced motion 下的呈現

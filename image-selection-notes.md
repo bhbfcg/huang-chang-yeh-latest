@@ -73,3 +73,17 @@ Netlify production 最新 Published commit 為 `77b4d6a`。已開啟並確認 `/
 ## GitHub 同步紀錄
 
 本次網站頁面修正已提交為 `da5118a`，SEO metadata 與 Footer 修正已提交為 `9ad304b`；新增的 Rhino 室內視覺化資產 `picture1-rhino-07.webp` 已提交為 `c242115`。Netlify 最新 Published 為 `main@9ad304b`，已確認 Rhino 案例頁標題為「Rhino 空間與形式研究」，新版文案已上線。
+
+## 茶藝館新增素材篩選（本次）
+
+已檢視 `Enscape_2024-03-17-21-19-51.png` 與 `Enscape_2024-03-17-21-21-03.png`。兩張皆為 1920×1080 的高解析茶藝館室內廣角，木格柵、紙拉門、茶席與暖木材質辨識度高；第一張較聚焦茶席與座席，第二張保留較完整的天花與空間尺度，適合分別作為案例主圖與 Lightbox 圖組。兩張為相近視角，後續匯入時應避免重複佔用首頁主視覺，並搭配不同方向的長廊／庭院圖。
+
+## Phase 3 互動驗證
+
+本地預覽的茶藝館案例頁已確認能正常渲染七張圖（原有四張加上 `picture1-teahouse-06/07/08.webp`）。點擊主視覺後，Radix Dialog Lightbox 可成功開啟，畫面包含上一張／下一張控制與關閉按鈕；頁面內容仍維持原有暖米白編輯風格。
+
+## Phase 4 雜誌式案例編排驗證
+
+案例詳情頁已加入跨欄圖組、圖組標題、導讀、圖片編號與個別圖說。桌面版的璞真永吉 18 樓能呈現「主視覺—設計導讀—大圖—次要視角」的閱讀節奏；手機版則收束為單欄並保留完整圖片說明。實際頁面文字已確認包含 `IMAGE SEQUENCE / RESIDENTIAL VISUALIZATION`、`Domestic calm, carefully proportioned.` 與三張圖片圖說。
+
+本次 `pnpm run build` 已成功完成，ProjectDetail chunk 及全域 CSS 均正常輸出。瀏覽器重整後璞真永吉 18 樓的導讀與圖說仍完整可見；後續 Lightbox 重測曾遇到 My Browser extension 暫時性 HTTP 504，尚未判定為網站程式錯誤。
