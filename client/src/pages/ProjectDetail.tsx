@@ -1,7 +1,8 @@
 // COCO editorial system: one strong image argument, followed by a measured explanation and a magazine-paced visual essay.
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useRoute } from "wouter";
-import LightboxGallery from "@/components/Lightbox";
+import LightboxGallery, { type GalleryCategory } from "@/components/Lightbox";
+import BackToTop from "@/components/BackToTop";
 import { useParallax, useScrollReveal } from "@/hooks/useScrollReveal";
 import { portfolioProjects } from "./Works";
 
@@ -12,6 +13,7 @@ type ProjectDetailData = {
   galleryTitle: string;
   galleryIntro: string;
   captions: string[];
+  categories?: GalleryCategory[][];
 };
 
 const detailData: Record<string, ProjectDetailData> = {
@@ -21,6 +23,7 @@ const detailData: Record<string, ProjectDetailData> = {
     galleryTitle: "A room for slowing down.",
     galleryIntro: "從入口的明亮到茶席的低伏尺度，圖組沿著木格柵、紙拉門、書牆與庭院借景展開，記錄一個文化空間如何把行走的速度慢慢放低。新增的燈籠、長窗、書牆與枯山水畫面，讓茶藝館的光線與停留層次更完整。",
     captions: ["木格柵與入口光線", "茶席的低尺度停留", "紙拉門與內外界面", "庭院砂紋與借景", "暖木包覆的空間尺度", "格柵之間的視線節奏", "茶席與自然光", "室內與庭院的收束", "燈籠群聚成為空間焦點", "長窗與木作座席", "書牆、收納與自然光", "茶席與山水屏風", "深色長廊的慢行尺度", "枯山水與室內借景"],
+    categories: [["flow", "light"], ["flow", "material"], ["flow", "light"], ["flow", "light"], ["material", "light"], ["flow", "material"], ["flow", "light"], ["material", "light"], ["material", "light"], ["flow", "material", "light"], ["material", "light"], ["flow", "material"], ["flow", "material", "light"], ["flow", "light"]],
     gallery: ["/assets/picture1-teahouse-02.webp", "/assets/picture1-teahouse-03.webp", "/assets/picture1-teahouse-04.webp", "/assets/picture1-teahouse-05.webp", "/assets/picture1-teahouse-06.webp", "/assets/picture1-teahouse-07.webp", "/assets/picture1-teahouse-08.webp", "/assets/picture1-teahouse-09.webp", "/assets/picture1-teahouse-10.webp", "/assets/picture1-teahouse-11.webp", "/assets/picture1-teahouse-12.webp", "/assets/picture1-teahouse-13.webp", "/assets/picture1-teahouse-14.webp"],
   },
   "qipao-retail-interior": {
@@ -121,6 +124,8 @@ export default function ProjectDetail() {
             galleryTitle={detail.galleryTitle}
             galleryIntro={detail.galleryIntro}
             captions={detail.captions}
+            categories={project.slug === "teahouse-graduation-project" ? [["flow", "light"], ...(detail.categories ?? [])] : undefined}
+            filterable={project.slug === "teahouse-graduation-project"}
           />
         </div>
       </section>
@@ -143,6 +148,7 @@ export default function ProjectDetail() {
           </Link>
         </div>
       </section>
+      <BackToTop />
     </div>
   );
 }
