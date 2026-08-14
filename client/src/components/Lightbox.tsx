@@ -7,6 +7,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 type LightboxGalleryProps = {
   images: string[];
@@ -25,6 +26,7 @@ export default function LightboxGallery({
   galleryIntro = "每一張影像都是一次觀看距離的調整，從整體比例到材料、光線與生活尺度，讓空間在不同視角中逐步展開。",
   captions = [],
 }: LightboxGalleryProps) {
+  const galleryRef = useScrollReveal<HTMLElement>();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeImage = images[activeIndex] ?? images[0];
@@ -59,7 +61,7 @@ export default function LightboxGallery({
   };
 
   return (
-    <section className="lightbox-gallery-section" aria-label={`${altPrefix} 圖片故事`}>
+    <section ref={galleryRef} className="lightbox-gallery-section reveal" aria-label={`${altPrefix} 圖片故事`}>
       <div className="magazine-gallery-head">
         <div className="magazine-gallery-index">
           <span className="section-label">{galleryLabel}</span>

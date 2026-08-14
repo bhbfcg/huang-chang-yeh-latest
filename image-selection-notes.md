@@ -87,3 +87,7 @@ Netlify production 最新 Published commit 為 `77b4d6a`。已開啟並確認 `/
 案例詳情頁已加入跨欄圖組、圖組標題、導讀、圖片編號與個別圖說。桌面版的璞真永吉 18 樓能呈現「主視覺—設計導讀—大圖—次要視角」的閱讀節奏；手機版則收束為單欄並保留完整圖片說明。實際頁面文字已確認包含 `IMAGE SEQUENCE / RESIDENTIAL VISUALIZATION`、`Domestic calm, carefully proportioned.` 與三張圖片圖說。
 
 本次 `pnpm run build` 已成功完成，ProjectDetail chunk 及全域 CSS 均正常輸出。瀏覽器重整後璞真永吉 18 樓的導讀與圖說仍完整可見；後續 Lightbox 重測曾遇到 My Browser extension 暫時性 HTTP 504，尚未判定為網站程式錯誤。
+
+## Phase 5 案例導覽與捲動動態驗證
+
+案例底部已加入依照 `portfolioProjects` 順序循環的上一個／下一個案例卡片；桌面版採雙欄排列，手機版收束為單欄。主視覺使用低幅度視差，案例導讀、圖片圖組與底部導覽使用 IntersectionObserver 淡入，並在 `prefers-reduced-motion: reduce` 或不支援 IntersectionObserver 時直接顯示內容。桌面／手機截圖與 `pnpm run build` 均已通過。

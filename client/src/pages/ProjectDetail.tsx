@@ -1,7 +1,8 @@
 // COCO editorial system: one strong image argument, followed by a measured explanation and a magazine-paced visual essay.
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import LightboxGallery from "@/components/Lightbox";
+import { useParallax, useScrollReveal } from "@/hooks/useScrollReveal";
 import { portfolioProjects } from "./Works";
 
 type ProjectDetailData = {
@@ -74,6 +75,10 @@ const detailData: Record<string, ProjectDetailData> = {
 
 export default function ProjectDetail() {
   const [, params] = useRoute<{ slug: string }>("/works/:slug");
+  const introRef = useScrollReveal<HTMLElement>();
+  const heroRef = useParallax<HTMLButtonElement>(18);
+  const bodyRef = useScrollReveal<HTMLElement>();
+  const navigationRef = useScrollReveal<HTMLElement>();
   const project = params ? portfolioProjects.find((item) => item.slug === params.slug) : undefined;
   const detail = params ? detailData[params.slug] : undefined;
 
@@ -81,9 +86,13 @@ export default function ProjectDetail() {
     return <div className="not-found"><h1>404</h1><p>This project is not available yet.</p><Link className="button button-dark" href="/works"><ArrowLeft size={14} /> Back to works</Link></div>;
   }
 
+  const projectIndex = portfolioProjects.findIndex((item) => item.slug === project.slug);
+  const previousProject = portfolioProjects[(projectIndex - 1 + portfolioProjects.length) % portfolioProjects.length];
+  const nextProject = portfolioProjects[(projectIndex + 1) % portfolioProjects.length];
+
   return (
     <div className="detail-page">
-      <section className="detail-intro">
+      <section ref={introRef} className="detail-intro reveal">
         <div>
           <Link className="text-link" href="/works"><ArrowLeft size={14} /> Back to works</Link>
           <div className="section-label" style={{ marginTop: "4rem" }}>{project.type}</div>
@@ -95,11 +104,11 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      <button className="detail-hero-trigger" type="button" aria-label={`放大查看：${project.title} 主視覺`} onClick={() => document.querySelector<HTMLButtonElement>(".lightbox-trigger")?.click()}>
+      <button ref={heroRef} className="detail-hero-trigger parallax-frame" type="button" aria-label={`放大查看：${project.title} 主視覺`} onClick={() => document.querySelector<HTMLButtonElement>(".lightbox-trigger")?.click()}>
         <img className="detail-hero-image" src={project.image} alt={`${project.title} — ${project.type} hero view`} width={1600} height={1000} loading="eager" fetchPriority="high" decoding="async" />
       </button>
 
-      <section className="detail-body">
+      <section ref={bodyRef} className="detail-body reveal">
         <div className="section-label">The approach</div>
         <div className="detail-copy">
           <h2>Observe.<br />Translate.<br />Make clear.</h2>
@@ -113,6 +122,25 @@ export default function ProjectDetail() {
             galleryIntro={detail.galleryIntro}
             captions={detail.captions}
           />
+        </div>
+      </section>
+
+      <section ref={navigationRef} className="case-navigation reveal" aria-label="案例快速導覽">
+        <div className="case-navigation-intro">
+          <span className="section-label">Continue exploring</span>
+          <p>沿著作品之間的尺度、材料與觀看方式，繼續閱讀下一個空間。</p>
+        </div>
+        <div className="case-navigation-links">
+          <Link className="case-nav-card" href={`/works/${previousProject.slug}`} aria-label={`上一個案例：${previousProject.title}`}>
+            <span className="case-nav-kicker"><ArrowLeft size={14} /> Previous case / {previousProject.no}</span>
+            <strong>{previousProject.title}</strong>
+            <span className="case-nav-meta">{previousProject.type}</span>
+          </Link>
+          <Link className="case-nav-card case-nav-card-next" href={`/works/${nextProject.slug}`} aria-label={`下一個案例：${nextProject.title}`}>
+            <span className="case-nav-kicker">Next case / {nextProject.no} <ArrowRight size={14} /></span>
+            <strong>{nextProject.title}</strong>
+            <span className="case-nav-meta">{nextProject.type}</span>
+          </Link>
         </div>
       </section>
     </div>
