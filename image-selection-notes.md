@@ -91,3 +91,7 @@ Netlify production 最新 Published commit 為 `77b4d6a`。已開啟並確認 `/
 ## Phase 5 案例導覽與捲動動態驗證
 
 案例底部已加入依照 `portfolioProjects` 順序循環的上一個／下一個案例卡片；桌面版採雙欄排列，手機版收束為單欄。主視覺使用低幅度視差，案例導讀、圖片圖組與底部導覽使用 IntersectionObserver 淡入，並在 `prefers-reduced-motion: reduce` 或不支援 IntersectionObserver 時直接顯示內容。桌面／手機截圖與 `pnpm run build` 均已通過。
+
+## 新增茶藝館素材整合
+
+使用者新增的 `081402.png`、`081401.png`、`0814.png`、`081404.png`、`081403.png`、`081405.png` 已依上傳順序整理為 `picture1-teahouse-09.webp` 至 `picture1-teahouse-14.webp`，保留原始比例、不進行放大。六張圖已加入茶藝館案例圖組，並補上燈籠、長窗、書牆、茶席、長廊與枯山水等圖說；茶藝館圖組目前共 14 張（含主視覺）。TypeScript、production build、桌面與手機長頁截圖均已通過。
