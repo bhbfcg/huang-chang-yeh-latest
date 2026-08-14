@@ -1,5 +1,5 @@
 // COCO editorial system: a quiet, tactile image sequence with magazine-style pacing, captions, and focused viewing.
-import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { ArrowDown, Box, ChevronLeft, ChevronRight, Maximize2, RotateCcw, SunMedium } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
   Dialog,
@@ -11,10 +11,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export type GalleryCategory = "flow" | "material" | "light";
 
-const categoryOptions: Array<{ id: GalleryCategory; label: string }> = [
-  { id: "flow", label: "空間動線" },
-  { id: "material", label: "材質細節" },
-  { id: "light", label: "光影變化" },
+const categoryOptions = [
+  { id: "flow" as const, label: "空間動線", icon: ArrowDown },
+  { id: "material" as const, label: "材質細節", icon: Box },
+  { id: "light" as const, label: "光影變化", icon: SunMedium },
 ];
 
 type LightboxGalleryProps = {
@@ -52,13 +52,15 @@ export default function LightboxGallery({
     () => activeCategory === "all" ? items : items.filter((item) => item.categories.includes(activeCategory)),
     [activeCategory, items],
   );
-  const activeImage = displayedItems[activeIndex]?.image ?? displayedItems[0]?.image;
+  const activeItem = displayedItems[activeIndex] ?? displayedItems[0];
+  const activeImage = activeItem?.image;
   const imageCount = displayedItems.length;
 
   useEffect(() => {
     if (!open) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (!imageCount) return;
       if (event.key === "ArrowRight") {
         event.preventDefault();
         setActiveIndex((index) => (index + 1) % imageCount);
@@ -86,6 +88,7 @@ export default function LightboxGallery({
   };
 
   const move = (direction: 1 | -1) => {
+    if (!imageCount) return;
     setActiveIndex((index) => (index + direction + imageCount) % imageCount);
   };
 
@@ -107,17 +110,21 @@ export default function LightboxGallery({
           <span className="gallery-filter-label">Filter by</span>
           <div className="gallery-filter-options">
             <button type="button" className={`gallery-filter-button ${activeCategory === "all" ? "is-active" : ""}`} aria-pressed={activeCategory === "all"} onClick={() => setActiveCategory("all")}>
-              全部 <span>{images.length}</span>
+              <Maximize2 size={13} aria-hidden="true" /> 全部 <span>{images.length}</span>
             </button>
             {categoryOptions.map((option) => {
               const count = items.filter((item) => item.categories.includes(option.id)).length;
+              const CategoryIcon = option.icon;
               return (
-                <button key={option.id} type="button" className={`gallery-filter-button ${activeCategory === option.id ? "is-active" : ""}`} aria-pressed={activeCategory === option.id} onClick={() => setActiveCategory(option.id)}>
-                  {option.label} <span>{count}</span>
+                <button key={option.id} type="button" data-category={option.id} className={`gallery-filter-button ${activeCategory === option.id ? "is-active" : ""}`} aria-pressed={activeCategory === option.id} onClick={() => setActiveCategory(option.id)}>
+                  <CategoryIcon size={14} strokeWidth={1.6} aria-hidden="true" /> {option.label} <span>{count}</span>
                 </button>
               );
             })}
           </div>
+          <button type="button" className={`gallery-filter-reset ${activeCategory === "all" ? "is-current" : ""}`} aria-label="清除篩選並顯示全部圖片" onClick={() => setActiveCategory("all")} disabled={activeCategory === "all"}>
+            <RotateCcw size={13} aria-hidden="true" /> 全部顯示
+          </button>
           <span className="gallery-filter-result">{imageCount} images</span>
         </div>
       )}
@@ -148,7 +155,7 @@ export default function LightboxGallery({
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="lightbox-content">
           <div className="lightbox-stage">
-            <img className="lightbox-image" src={activeImage} alt={`${altPrefix} 高解析案例圖片 ${(displayedItems[activeIndex]?.originalIndex ?? 0) + 1}`} />
+            <img className="lightbox-image" src={activeImage} alt={`${altPrefix} 高解析案例圖片 ${(activeItem?.originalIndex ?? 0) + 1}`} />
           </div>
           <div className="lightbox-toolbar">
             <DialogTitle className="lightbox-title">{altPrefix}</DialogTitle>
@@ -161,6 +168,10 @@ export default function LightboxGallery({
                 <ChevronRight size={18} />
               </button>
             </div>
+          </div>
+          <div className="lightbox-caption">
+            <span className="lightbox-caption-label">Design detail / {String((activeItem?.originalIndex ?? 0) + 1).padStart(2, "0")}</span>
+            <p>{activeItem?.caption ?? "空間視角"}</p>
           </div>
           <DialogDescription className="lightbox-description">使用左右方向鍵切換圖片，按 Esc 關閉放大檢視。</DialogDescription>
         </DialogContent>
