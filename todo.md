@@ -57,3 +57,7 @@
 - [x] 將「實習公司／玉山社區 3D」統一改為「玉山社區」並移除不必要的實習公司描述
 - [x] 將「Rhino 模型練習」改為更自然的作品集案例措辭並同步 SEO
 - [x] 將 0126.png 納入 Rhino 空間與形式研究案例，並移除原先錯誤的住宅歸類
+- [x] 重現 `/works/yongji-13f-visualization` 的 dynamic import chunk 載入錯誤
+- [x] 盤點 Netlify 入口 HTML、lazy route chunk 與 cache／版本同步問題
+- [x] 修正動態路由載入策略或建置資產設定，避免舊 chunk 造成白屏
+- [x] 驗證所有作品路由、production build 與 Netlify production
