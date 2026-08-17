@@ -83,3 +83,19 @@ Netlify project overview 明確顯示：`cdc is now running on operational credi
 ## Image-led Lightbox 實測
 
 在本地預覽重新載入新頁面後，實際點擊 Image-first Hero 的 View Project Image，Lightbox 成功開啟；畫面保留上一張／下一張、Close、圖片計數與底部 Design detail 圖說。這證明新 Hero 位置與既有 Lightbox 狀態仍正確連動。
+
+## pasted_content_3 參考研究（第一批）
+
+**Wallpaper*** 的首頁將 Architecture、Design & Interiors、Art & Culture 等內容分成清楚的編輯入口，並以主視覺圖片、標題、摘要與分類節點形成不同內容密度；可借鑑的是「內容層級與圖片／文字比例」，而不是單一作品集 Grid。
+
+**The World Around** 使用黑底、極大文字、簡短導航與大型視覺標題建立策展平台的第一印象，後續內容以 Summit、Archive、Insights、Programs 等不同節點交錯，內容尺度與資訊密度不固定。可借鑑的是 Typography 作為構圖，以及不同內容節點之間的策展節奏。
+
+**Designboom** 的內容密度不是平均分配，而是以 featured story、分類標籤、熱門內容與列表節點形成不同重量；標題、摘要、分類與圖片共同決定層級。可借鑑的是「不是每張圖都同等重要」，以及大型 featured content 與小型資訊節點並置。
+
+**Deptin Architecture Studio** 的案例說明強調 editorial layout、cinematic motion、fullscreen、minimal 與 custom development；其展示頁以較小的作品預覽搭配大量留白與周邊導航，將互動體驗本身作為案例資訊的一部分。對茶藝館的實作將只吸收 fullscreen image、少量動態節奏與清晰的作品導航，不引入複雜 WebGL 或新內容。
+
+## Editorial Art Direction 截圖驗證
+
+桌面 viewport 截圖確認 Image-first Hero 正常載入：木質庭院主景佔據主要視窗，TEAHOUSE 大字沿圖片底部跨越影像與留白，Project navigation 保持安靜。Full-page 截圖中的部分下方圖片呈現灰色 placeholder，判定為 lazy-loading 與完整頁截圖的載入時序限制；viewport 截圖中 Hero 圖片與第一個視覺區段正常。後續需以手機 viewport 與實際捲動頁面驗證下方圖片。
+
+手機 viewport 截圖確認 Hero 圖片在 390px 寬度仍維持完整木質空間構圖，TEAHOUSE 文字跨越圖片底部，Project annotation 與 scroll cue 保持低干擾；手機版以單欄但保留左／右偏移節點，不退化為普通卡片。Works 與璞真永吉 18 樓截圖維持原有全站／其他案例版面，茶藝館專屬 CSS 未污染共用路由。

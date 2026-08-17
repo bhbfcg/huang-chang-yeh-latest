@@ -27,10 +27,11 @@ export default function TeahouseCaseStudy() {
   const nextProject = portfolioProjects[(projectIndex + 1) % portfolioProjects.length];
   const images = [project.image, ...detail.gallery];
   const categories = detail.categories ?? [];
-  const imageOrder = [0, 3, 1, 5, 2, 7, 4, 8, 6, 10, 9, 11, 13, 12];
+  // The visual order follows the editorial map: opening, spatial dialogue, material notes, anchors, then final climax.
+  const imageOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   const editorialSections = [
     { index: 5, label: "Material" },
-    { index: 10, label: "Final images" },
+    { index: 8, label: "Final images" },
   ];
 
   return (
@@ -74,7 +75,7 @@ export default function TeahouseCaseStudy() {
 
         <section ref={conceptRef} className="teahouse-concept teahouse-editorial-insert reveal" aria-label="Concept">
           <div className="teahouse-concept-content">
-            <div className="teahouse-editorial-quote">Observe.<br />Translate.<br />Make clear.</div>
+            <div className="teahouse-concept-kicker">{detail.intro}</div>
             <div className="teahouse-concept-copy">
               <p>{detail.body}</p>
               <Link className="teahouse-inline-link" href="/contact">Start a conversation <ArrowUpRight size={14} /></Link>

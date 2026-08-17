@@ -140,5 +140,14 @@
 - [x] 驗證手機版、既有內容限制與其他路由不受影響
 - [x] 保存附件規格導向的重構版本並交付具體 Layout 說明
 
-- [ ] 保存本輪 Image-led Architectural Editorial 茶藝館重構 checkpoint
-- [ ] 向使用者交付本輪具體 Layout 改動摘要（Hero、Project Information、Editorial Insert、圖片序列、UI 降噪）
+- [x] 保存本輪 Image-led Architectural Editorial 茶藝館重構 checkpoint
+- [x] 向使用者交付本輪具體 Layout 改動摘要（Hero、Project Information、Editorial Insert、圖片序列、UI 降噪）
+- [x] 向使用者發送本輪 Image-led Architectural Editorial 的具體 Layout 改動摘要，明確說明 Hero、Project Information、Editorial Insert、14 張圖片非對稱序列、Filter／UI 降噪與保留功能
+
+- [x] 研究 Wallpaper*、The World Around、Designboom、Deptin 的 Editorial Layout Thinking，不複製網站
+- [x] 分析現有 14 張圖片的 visual weight、構圖、色彩、光線、裁切與適合尺度
+- [x] 以雜誌跨頁邏輯建立不重複的 Composition A–G 圖文序列
+- [x] 讓 Typography、圖片、空白與對照關係共同構成 Art Direction
+- [x] 保留既有 Filter／View／Lightbox／Progress／TOP／前後案例並降低輔助 UI 重量
+- [x] 驗證手機版、既有內容限制與其他案例路由不受影響
+- [x] 保存 Editorial Art Direction checkpoint 並交付具體改動摘要
