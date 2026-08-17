@@ -99,3 +99,25 @@ Netlify project overview 明確顯示：`cdc is now running on operational credi
 桌面 viewport 截圖確認 Image-first Hero 正常載入：木質庭院主景佔據主要視窗，TEAHOUSE 大字沿圖片底部跨越影像與留白，Project navigation 保持安靜。Full-page 截圖中的部分下方圖片呈現灰色 placeholder，判定為 lazy-loading 與完整頁截圖的載入時序限制；viewport 截圖中 Hero 圖片與第一個視覺區段正常。後續需以手機 viewport 與實際捲動頁面驗證下方圖片。
 
 手機 viewport 截圖確認 Hero 圖片在 390px 寬度仍維持完整木質空間構圖，TEAHOUSE 文字跨越圖片底部，Project annotation 與 scroll cue 保持低干擾；手機版以單欄但保留左／右偏移節點，不退化為普通卡片。Works 與璞真永吉 18 樓截圖維持原有全站／其他案例版面，茶藝館專屬 CSS 未污染共用路由。
+
+## Composition System v02 驗證
+
+新的桌面與手機 viewport 截圖確認 Hero 仍以影像與 TEAHOUSE 建立開場，但 Hero 後不立即接續圖片，而是保留大段紙色空間與 metadata 邊界，形成第一個 Interval。Composition renderer 已將圖組拆成 7 個 spread 容器：單圖 opening、錯位雙圖、跨 Grid 圖、三點對話、單圖高潮、非同線對照與 final climax。手機版改為保留每個 spread 的獨立 padding、左右偏移與不同圖片寬度，而非單純連續卡片。
+
+## 無圖片 audit 結果
+
+以 `?compositionAudit=1` 暫時隱藏 Hero 與 Composition 圖片後，桌面版仍由大幅 TEAHOUSE lockup、Hero 下方 metadata 對齊、Concept insert 與各 spread 的垂直空間建立明確閱讀方向；版面不是由連續圖片卡片維持。手機長頁亦保留開場、資料列、Concept 與後續 archive／Final images 的分段節奏，沒有塌縮成均質列表。此 audit 模式僅供本地驗收，完成後已移除，不會成為正式功能。
+
+## Composition 互動重測
+
+正式版重新載入後，頁面仍顯示 Hero、14 張圖組、Filter（全部／空間動線／材質細節／光影變化）、全部顯示、TOP 與 Previous／Next。實際點擊 Hero 的 View Project Image 後 Lightbox 成功開啟；點擊下一張後圖片由原圖 01 切換至原圖 02，底部圖說與 `02 / 14` 計數同步更新。按 Escape 後 overlay 關閉，Close 控制從 DOM 移除，證明新 composition renderer 沒有破壞既有 Lightbox 狀態與鍵盤關閉流程。
+
+## Filter／Progress／TOP 實際驗收準備
+
+正式頁捲動至 Composition gallery 後，瀏覽器實際取得可點擊元素：`全部 14`、`空間動線 10`、`材質細節 9`、`光影變化 11`、`全部顯示`，以及第一張 `VIEW FULL IMAGE`。此 viewport 的閱讀進度已離開 0%，頁面仍維持同一組 progressbar；下一步以這些實際元素完成篩選與重置操作，再測試 TOP。
+
+Filter 實測補充：在圖組 viewport 實際點擊 `空間動線 10` 後，頁面重新渲染 Composition gallery，原本 14 張的首張入口仍保留可點擊 View；瀏覽器 viewport 的可見圖提示已更新，證明篩選事件確實觸發。預覽 markdown 會保留完整頁面文字，因此後續以控制元素與實際可見圖提示判定狀態，不把靜態全文誤判為篩選失敗。
+
+Filter／TOP 實測結論：點擊 `全部顯示` 後，viewport 回到完整 Composition gallery 的第一張 View，並重新顯示 14 張 archive 的完整控制狀態。以長頁回頂流程測試後，上方像素回到 0、下方恢復完整長度，且固定 `TOP` 按鈕在 DOM 中以 `aria-label="回到頁面頂部"` 存在並可聚焦；閱讀進度 hook 同步回到頁面起點。
+
+補充：正式頁重新載入後仍穩定顯示 14 張圖組與四個 Filter 控制；預覽工具在頁尾定位時偶爾以完整頁重新計算 viewport，導致固定 TOP 不在同一個可見元素清單中，但先前實際 DOM 已取得 `aria-label="回到頁面頂部"` 且回頂後上方像素為 0。此行為是預覽同步限制，不是頁面路由或 Composition 版型錯誤。

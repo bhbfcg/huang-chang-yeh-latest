@@ -850,3 +850,60 @@
 @media (prefers-reduced-motion: reduce) {
   .teahouse-image-led-page .teahouse-hero-image, .teahouse-image-led-page .teahouse-gallery .magazine-frame .lightbox-trigger img { transition: none !important; }
 }
+
+/* TEAHOUSE — Spread Composition System: layout first, images second */
+.teahouse-image-led-page .lightbox-gallery-composition { display: block; width: 100%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(1rem, 3vw, 4rem); min-height: 72svh; margin: 0; }
+.teahouse-image-led-page .lightbox-gallery-composition .magazine-frame { position: relative; align-self: start; width: auto; margin: 0; }
+.teahouse-image-led-page .lightbox-gallery-composition .magazine-caption { opacity: .52; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-1 { min-height: 86svh; align-items: end; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-1::before { content: ""; position: absolute; top: 18%; left: 9%; width: 1px; height: 24%; background: rgba(23,23,19,.12); }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-1 .magazine-frame[data-gallery-index="0"] { grid-column: 5 / -1; width: 100%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2 { min-height: 116svh; align-items: start; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2::before { content: ""; position: absolute; top: 16%; left: 0; width: 36%; height: 1px; background: rgba(23,23,19,.1); }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2 .magazine-frame[data-gallery-index="1"] { grid-column: 2 / span 3; margin-top: 18%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2 .magazine-frame[data-gallery-index="2"] { grid-column: 8 / span 4; margin-top: 46%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 { min-height: 92svh; display: flex; align-items: center; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 .magazine-frame[data-gallery-index="3"] { width: calc(100% + 10vw); margin-left: -5vw; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 .magazine-caption { margin-left: 5vw; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 .magazine-frame[data-gallery-index="4"] { position: absolute; right: 5%; bottom: -12%; width: 24%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 { min-height: 132svh; align-items: start; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4::after { content: ""; position: absolute; right: 9%; top: 12%; width: 1px; height: 52%; background: rgba(23,23,19,.1); }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="5"] { grid-column: 2 / span 2; margin-top: 4%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="6"] { grid-column: 1 / span 6; margin-top: 46%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="7"] { grid-column: 9 / span 3; margin-top: 14%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-5 { min-height: 100svh; align-items: center; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-5::before { content: ""; position: absolute; inset: 14% 8%; border-top: 1px solid rgba(23,23,19,.1); border-bottom: 1px solid rgba(23,23,19,.1); }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-5 .magazine-frame[data-gallery-index="8"] { grid-column: 2 / -1; width: 100%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 { min-height: 128svh; align-items: start; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="9"] { grid-column: 10 / span 2; margin-top: 10%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="10"] { grid-column: 1 / span 7; margin-top: 48%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="11"] { grid-column: 8 / span 4; margin-top: 68%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 { min-height: 134svh; align-items: end; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 .magazine-frame[data-gallery-index="12"] { grid-column: 2 / span 2; margin-bottom: 38%; }
+.teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 .magazine-frame[data-gallery-index="13"] { grid-column: 1 / -1; width: 100%; margin-bottom: 0; }
+.teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="0"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="3"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="8"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="13"] .lightbox-trigger { aspect-ratio: 16 / 9; }
+.teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="1"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="5"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="9"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="12"] .lightbox-trigger { aspect-ratio: 3 / 4; }
+.teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="2"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="4"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="6"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="7"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="10"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="11"] .lightbox-trigger, .teahouse-image-led-page .lightbox-gallery-composition .magazine-frame[data-gallery-index="13"] .lightbox-trigger { aspect-ratio: 4 / 3; }
+@media (max-width: 700px) {
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread { display: block; min-height: 0; padding-block: 4rem 7rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread::before, .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread::after { display: none; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread .magazine-frame { position: relative; display: block; width: 100%; margin: 0 0 5rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-1 { padding-top: 2rem; padding-bottom: 9rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-1 .magazine-frame[data-gallery-index="0"] { width: 92%; margin-left: auto; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2 .magazine-frame[data-gallery-index="1"] { width: 72%; margin-left: 0; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-2 .magazine-frame[data-gallery-index="2"] { width: 68%; margin-left: auto; margin-top: 4rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 { padding-block: 3rem 9rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 .magazine-frame[data-gallery-index="3"] { width: calc(100% + 2.5rem); margin-left: -1.25rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-3 .magazine-frame[data-gallery-index="4"] { width: 45%; margin-left: auto; margin-top: 4rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="5"] { width: 42%; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="6"] { width: 82%; margin-top: 6rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-4 .magazine-frame[data-gallery-index="7"] { width: 52%; margin-left: auto; margin-top: 4rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-5 .magazine-frame[data-gallery-index="8"] { width: 100%; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="9"] { width: 38%; margin-left: auto; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="10"] { width: 88%; margin-top: 7rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-6 .magazine-frame[data-gallery-index="11"] { width: 66%; margin-left: auto; margin-top: 4rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 { padding-bottom: 12rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 .magazine-frame[data-gallery-index="12"] { width: 38%; margin-bottom: 7rem; }
+  .teahouse-image-led-page .lightbox-gallery-composition .teahouse-composition-spread-7 .magazine-frame[data-gallery-index="13"] { width: 100%; }
+}

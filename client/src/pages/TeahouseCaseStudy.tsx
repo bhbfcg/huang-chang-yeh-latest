@@ -99,7 +99,7 @@ export default function TeahouseCaseStudy() {
               captions={detail.captions}
               categories={categories}
               filterable
-              layout="editorial"
+              layout="composition"
               editorialSections={editorialSections}
             />
           </div>

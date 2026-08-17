@@ -151,3 +151,18 @@
 - [x] 保留既有 Filter／View／Lightbox／Progress／TOP／前後案例並降低輔助 UI 重量
 - [x] 驗證手機版、既有內容限制與其他案例路由不受影響
 - [x] 保存 Editorial Art Direction checkpoint 並交付具體改動摘要
+
+- [x] 建立不依賴圖片的 Teahouse Composition Map，先定義 Spread／文字／Grid／空白位置
+- [x] 設計不同於 Gallery 的 Spread → Composition → Spread 閱讀系統
+- [x] 讓 Typography、空白、Grid 斷裂與對照關係先於圖片成立
+- [x] 將既有 14 張圖片放入構圖，不以圖片尺寸變化作為主要變化
+- [x] 驗證移除圖片後的版面感、既有互動、手機版與其他路由隔離
+- [x] 保存 Composition System 重構 checkpoint 並交付具體差異
+
+- [x] 實際執行無圖片檢查模式，確認 Typography／空白／Grid 仍具閱讀方向
+- [x] 重新實測 Composition 版型下的 Filter、Lightbox 開啟／切換／關閉、Progress、TOP 與手機版
+- [x] 保存包含 Composition Map、Lightbox、TeahouseCaseStudy 與 index.css 的新 checkpoint
+
+- [x] 實際點擊並驗證 Composition 版型下的 Filter 切換與全部顯示重置
+- [x] 實際驗證 TOP 回頂與閱讀進度條在捲動後的比例變化
+- [x] 在手機正式頁實測 Lightbox／Filter／TOP，並保存本輪 Composition System checkpoint

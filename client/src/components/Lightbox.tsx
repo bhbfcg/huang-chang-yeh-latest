@@ -27,7 +27,7 @@ type LightboxGalleryProps = {
   captions?: string[];
   categories?: GalleryCategory[][];
   filterable?: boolean;
-  layout?: "default" | "editorial";
+  layout?: "default" | "editorial" | "composition";
   editorialSections?: Array<{ index: number; label: string }>;
 };
 
@@ -140,32 +140,53 @@ export default function LightboxGallery({
         </div>
       )}
 
-      <div className={`lightbox-gallery magazine-count-${Math.min(imageCount, 6)} ${activeCategory !== "all" ? "is-filtered" : ""}`}>
-        {displayedItems.map((item, index) => {
-          const alt = `${altPrefix} 高解析案例圖片 ${item.originalIndex + 1}`;
-          const section = editorialSections.find((entry) => entry.index === index);
-          return (
-            <Fragment key={item.image}>
-              {section && <div className="magazine-section-break" data-section-index={section.index}><span>{section.label}</span></div>}
-              <figure className={`magazine-frame magazine-frame-${Math.min(index + 1, 6)}`} data-gallery-index={item.originalIndex}>
-
-              <button
-                className="lightbox-trigger"
-                type="button"
-                aria-label={`放大查看：${alt}`}
-                onClick={() => openAt(index)}
-              >
-                <img src={item.image} alt={alt} width={1600} height={1000} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
-                <span className="lightbox-trigger-label"><Maximize2 size={13} /> View full image</span>
-              </button>
-              <figcaption className="magazine-caption">
-                <span>{String(item.originalIndex + 1).padStart(2, "0")}</span>
-                <span>{item.caption}</span>
-              </figcaption>
-              </figure>
-            </Fragment>
-          );
-        })}
+      <div className={`lightbox-gallery ${layout === "composition" ? "lightbox-gallery-composition" : `magazine-count-${Math.min(imageCount, 6)}`} ${activeCategory !== "all" ? "is-filtered" : ""}`}>
+        {layout === "composition" ? (
+          [[0], [1, 2], [3, 4], [5, 6, 7], [8], [9, 10, 11], [12, 13]].map((group, groupIndex) => (
+            <div className={`teahouse-composition-spread teahouse-composition-spread-${groupIndex + 1}`} key={`spread-${groupIndex}`}>
+              {group.filter((index) => index < displayedItems.length).map((index) => {
+                const item = displayedItems[index];
+                const alt = `${altPrefix} 高解析案例圖片 ${item.originalIndex + 1}`;
+                const section = editorialSections.find((entry) => entry.index === index);
+                return (
+                  <Fragment key={item.image}>
+                    {section && <div className="magazine-section-break" data-section-index={section.index}><span>{section.label}</span></div>}
+                    <figure className={`magazine-frame magazine-frame-${Math.min(index + 1, 6)}`} data-gallery-index={item.originalIndex}>
+                      <button className="lightbox-trigger" type="button" aria-label={`放大查看：${alt}`} onClick={() => openAt(index)}>
+                        <img src={item.image} alt={alt} width={1600} height={1000} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+                        <span className="lightbox-trigger-label"><Maximize2 size={13} /> View full image</span>
+                      </button>
+                      <figcaption className="magazine-caption">
+                        <span>{String(item.originalIndex + 1).padStart(2, "0")}</span>
+                        <span>{item.caption}</span>
+                      </figcaption>
+                    </figure>
+                  </Fragment>
+                );
+              })}
+            </div>
+          ))
+        ) : (
+          displayedItems.map((item, index) => {
+            const alt = `${altPrefix} 高解析案例圖片 ${item.originalIndex + 1}`;
+            const section = editorialSections.find((entry) => entry.index === index);
+            return (
+              <Fragment key={item.image}>
+                {section && <div className="magazine-section-break" data-section-index={section.index}><span>{section.label}</span></div>}
+                <figure className={`magazine-frame magazine-frame-${Math.min(index + 1, 6)}`} data-gallery-index={item.originalIndex}>
+                  <button className="lightbox-trigger" type="button" aria-label={`放大查看：${alt}`} onClick={() => openAt(index)}>
+                    <img src={item.image} alt={alt} width={1600} height={1000} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+                    <span className="lightbox-trigger-label"><Maximize2 size={13} /> View full image</span>
+                  </button>
+                  <figcaption className="magazine-caption">
+                    <span>{String(item.originalIndex + 1).padStart(2, "0")}</span>
+                    <span>{item.caption}</span>
+                  </figcaption>
+                </figure>
+              </Fragment>
+            );
+          })
+        )}
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
