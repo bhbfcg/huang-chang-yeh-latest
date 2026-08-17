@@ -27,6 +27,12 @@ export default function TeahouseCaseStudy() {
   const nextProject = portfolioProjects[(projectIndex + 1) % portfolioProjects.length];
   const images = [project.image, ...detail.gallery];
   const categories = detail.categories ?? [];
+  const editorialSections = [
+    { index: 0, label: "Atmosphere" },
+    { index: 3, label: "Material" },
+    { index: 7, label: "Space" },
+    { index: 11, label: "Final images" },
+  ];
 
   return (
     <div className="teahouse-case-page">
@@ -99,6 +105,7 @@ export default function TeahouseCaseStudy() {
               categories={categories}
               filterable
               layout="editorial"
+              editorialSections={editorialSections}
             />
           </div>
         </section>

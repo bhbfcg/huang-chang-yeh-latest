@@ -33,3 +33,15 @@
 ## Netlify readiness check
 
 Netlify project overview 明確顯示：`cdc is now running on operational credits`，published sites 仍然 live，但 production deploys 與 Agent Runners 已 paused；頁面目前的正式版本仍為 `main@6a128cb Published`，且專案標示 `Deploys from GitHub`。因此本輪變更已整理在本地 checkpoint 與待同步檔案中，但在 operational credits 恢復前不應宣稱已完成正式 Netlify deploy。
+
+## 目前頁面分析（只讀）
+
+目前實際頁面已不是原始展板，而是由 TEAHOUSE Hero、Project Information、01 / Concept、02—05 / Visual essay、分類篩選、14 張圖片與底部案例導覽構成的長篇 Editorial Case Study。頂部 Hero 的大標、主視覺與暖米白背景已建立清楚的第一印象；圖片序列也已採用大圖、雙欄與留白交替，而非平均卡片網格。
+
+目前仍可改善的核心是閱讀節點之間的「敘事連接」。Hero 與 Project Information 之間偏安靜，Concept 段落的文字與圖片序列之間缺少一個更明確的轉場語法；Visual essay 的分類篩選是實用控制，但視覺上仍像工具列，容易打斷作品觀看。14 張圖在長頁中形成多個留白斷點，若不增加章節導覽，讀者可能不容易掌握自己位於 Atmosphere、Material、Space 或 Final images 的哪一段。
+
+目前可用且應保留的內容包含：`A tea house shaped by pause and ritual.`、既有中文設計論述、14 張既有圖片與圖說、三種既有分類、Lightbox、回到頂部、前後案例導覽、閱讀進度條、View 圖片互動與 reduced-motion 支援。下一階段應只重新組織這些內容，不加入年份、地點、平面圖、剖面圖、材料表或其他未提供資訊。
+
+## A／Linear Editorial × B／Quiet Archive 實作驗證
+
+本輪只修改茶藝館專屬元件與其 scoped CSS。桌面版已呈現大圖、留白、非對稱雙圖、置中圖與不同高度圖片的交替節奏；Mobile 版則收束為單欄，但保留寬度差、上下留白與章節分隔。Filter 仍保留在單一 Lightbox gallery 中，視覺重量降低；圖片與文字內容均沿用原有 14 張、既有圖說、既有分類與既有英文／中文文案。Works 與璞真永吉 18 樓案例截圖維持原本共用版面，未被茶藝館 CSS 污染。

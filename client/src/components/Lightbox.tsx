@@ -1,6 +1,6 @@
 // COCO editorial system: a quiet, tactile image sequence with magazine-style pacing, captions, and focused viewing.
 import { ArrowDown, Box, ChevronLeft, ChevronRight, Maximize2, RotateCcw, SunMedium } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -27,6 +27,7 @@ type LightboxGalleryProps = {
   categories?: GalleryCategory[][];
   filterable?: boolean;
   layout?: "default" | "editorial";
+  editorialSections?: Array<{ index: number; label: string }>;
 };
 
 export default function LightboxGallery({
@@ -39,6 +40,7 @@ export default function LightboxGallery({
   categories = [],
   filterable = false,
   layout = "default",
+  editorialSections = [],
 }: LightboxGalleryProps) {
   const galleryRef = useScrollReveal<HTMLElement>();
   const [open, setOpen] = useState(false);
@@ -136,8 +138,12 @@ export default function LightboxGallery({
       <div className={`lightbox-gallery magazine-count-${Math.min(imageCount, 6)} ${activeCategory !== "all" ? "is-filtered" : ""}`}>
         {displayedItems.map((item, index) => {
           const alt = `${altPrefix} 高解析案例圖片 ${item.originalIndex + 1}`;
+          const section = editorialSections.find((entry) => entry.index === item.originalIndex);
           return (
-            <figure className={`magazine-frame magazine-frame-${Math.min(index + 1, 6)}`} key={item.image}>
+            <Fragment key={item.image}>
+              {section && <div className="magazine-section-break" data-section-index={section.index}><span>{section.label}</span></div>}
+              <figure className={`magazine-frame magazine-frame-${Math.min(index + 1, 6)}`} data-gallery-index={item.originalIndex}>
+
               <button
                 className="lightbox-trigger"
                 type="button"
@@ -151,7 +157,8 @@ export default function LightboxGallery({
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <span>{item.caption}</span>
               </figcaption>
-            </figure>
+              </figure>
+            </Fragment>
           );
         })}
       </div>

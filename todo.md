@@ -104,3 +104,14 @@
 - [x] 為茶藝館各 Section 文字加入捲動淡入與向上浮現
 - [x] 驗證進度條、圖片互動、文字動畫、reduced-motion 與 production build
 - [x] 保存本輪互動升級 checkpoint 並交付
+
+- [x] 只分析目前茶藝館案例頁，不修改程式碼
+- [x] 盤點現有頁面內容、圖片序列、Section 與互動
+- [x] 提出 A／B／C 三種茶藝館案例頁 Layout 方案
+- [x] 等待使用者選定 Layout 後再進入實作
+
+- [x] 依 A／Linear Editorial × B／Quiet Archive 方向重組茶藝館圖片與 Section 節奏
+- [x] 降低 Filter 與文字控制的視覺重量，保留既有功能與內容
+- [x] 調整大圖、留白、不對稱雙圖與不同寬度圖片比例，不新增內容或動畫
+- [x] 驗證只有茶藝館案例頁變更，其他案例與全站功能不受影響
+- [x] 保存 Layout 重構版本並具體交付改動說明
