@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, MoveDown } from "lucide-react";
 import { Link } from "wouter";
 import BackToTop from "@/components/BackToTop";
 import LightboxGallery, { type GalleryCategory } from "@/components/Lightbox";
-import { useParallax, useScrollReveal } from "@/hooks/useScrollReveal";
+import { useParallax, useReadingProgress, useScrollReveal } from "@/hooks/useScrollReveal";
 import { detailData } from "./ProjectDetail";
 import { portfolioProjects } from "./Works";
 
@@ -12,6 +12,7 @@ export default function TeahouseCaseStudy() {
   const project = portfolioProjects.find((item) => item.slug === teahouseSlug);
   const detail = detailData[teahouseSlug];
   const heroRef = useParallax<HTMLButtonElement>(10);
+  const readingProgress = useReadingProgress();
   const infoRef = useScrollReveal<HTMLElement>();
   const conceptRef = useScrollReveal<HTMLElement>();
   const sequenceRef = useScrollReveal<HTMLElement>();
@@ -29,6 +30,9 @@ export default function TeahouseCaseStudy() {
 
   return (
     <div className="teahouse-case-page">
+      <div className="teahouse-reading-progress" aria-label={`案例閱讀進度 ${Math.round(readingProgress * 100)}%`} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(readingProgress * 100)}>
+        <span style={{ transform: `scaleX(${readingProgress})` }} />
+      </div>
       <header className="teahouse-hero">
         <div className="teahouse-hero-top">
           <Link className="teahouse-back-link" href="/works"><ArrowLeft size={14} /> Back to works</Link>

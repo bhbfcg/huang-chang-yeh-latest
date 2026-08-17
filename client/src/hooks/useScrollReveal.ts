@@ -1,5 +1,5 @@
 // COCO editorial system: motion should feel like a page entering the reader's field of view—quiet, directional, and optional.
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useScrollReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -29,6 +29,33 @@ export function useScrollReveal<T extends HTMLElement>() {
   }, []);
 
   return ref;
+}
+
+export function useReadingProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0);
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  return progress;
 }
 
 export function useParallax<T extends HTMLElement>(amount = 18) {

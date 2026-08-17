@@ -98,3 +98,9 @@
 - [x] 重新設計後實際驗證 Hero→Lightbox、分類篩選、全部顯示、回到頂部與前後案例導覽
 - [x] 檢查並記錄 Git 狀態、待同步檔案與 Netlify credits 阻塞狀態
 - [x] 保存茶藝館重設計完成版 checkpoint 並交付摘要
+
+- [x] 為茶藝館案例頁加入頂部極簡閱讀進度條
+- [x] 為茶藝館圖片加入 View 自訂游標與微幅放大互動
+- [x] 為茶藝館各 Section 文字加入捲動淡入與向上浮現
+- [x] 驗證進度條、圖片互動、文字動畫、reduced-motion 與 production build
+- [x] 保存本輪互動升級 checkpoint 並交付
