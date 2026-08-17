@@ -95,6 +95,6 @@
 - [x] 建立重新設計版本 checkpoint 並交付
 - [ ] 待 Netlify operational credits 恢復後確認 GitHub 同步與正式部署
 
-- [ ] 重新設計後實際驗證 Hero→Lightbox、分類篩選、全部顯示、回到頂部與前後案例導覽
-- [ ] 檢查並記錄 Git 狀態、待同步檔案與 Netlify credits 阻塞狀態
-- [ ] 保存茶藝館重設計完成版 checkpoint 並交付摘要
+- [x] 重新設計後實際驗證 Hero→Lightbox、分類篩選、全部顯示、回到頂部與前後案例導覽
+- [x] 檢查並記錄 Git 狀態、待同步檔案與 Netlify credits 阻塞狀態
+- [x] 保存茶藝館重設計完成版 checkpoint 並交付摘要

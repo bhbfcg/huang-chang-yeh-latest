@@ -29,3 +29,7 @@
 ## 第一輪實作驗證
 
 重新設計後的實際預覽已確認包含 `TEAHOUSE` Hero、`Graduation Project / Interior Architecture` 副標、`Project information` 資料列、`01 / Concept`、`02—05 / Visual essay`、14 張既有圖片及底部前後案例導覽。桌面截圖呈現大標題、寬幅主視覺、暖沙色 Concept 區與非規則圖片節奏；其他 `/works/yongji-18f-visualization` 與 `/works` 截圖維持原有版面。TypeScript 與 production build 已通過。預覽長頁在 full-page capture 中對 lazy image 的實際載入仍需以一般滾動流程再確認，避免把截圖工具的 lazy-loading 行為誤判為版面問題。
+
+## Netlify readiness check
+
+Netlify project overview 明確顯示：`cdc is now running on operational credits`，published sites 仍然 live，但 production deploys 與 Agent Runners 已 paused；頁面目前的正式版本仍為 `main@6a128cb Published`，且專案標示 `Deploys from GitHub`。因此本輪變更已整理在本地 checkpoint 與待同步檔案中，但在 operational credits 恢復前不應宣稱已完成正式 Netlify deploy。
