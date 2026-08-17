@@ -71,3 +71,7 @@ Netlify project overview 明確顯示：`cdc is now running on operational credi
 最後一次預覽檢查仍顯示主視覺、完整 14 張圖組與 Filter／Lightbox／TOP／案例導覽內容存在；此預覽環境的滾動位置同步不穩定，已停止繼續捲動並以成功的 Lightbox 點擊／切換／Escape 實測、TypeScript、production build 與桌面／手機截圖完成驗證。
 
 本次從頂部嘗試跳到底部時，預覽面板仍未更新 viewport 位置，但完整頁面 markdown 仍可解析 Filter、全部顯示、14 張圖片與章節內容。由於 DOM 內容已完整且多次實測 Lightbox 成功，停止額外捲動，避免對預覽狀態造成干擾。
+
+## 純 Visual Refinement 驗證
+
+正式同版預覽維持既有架構與內容。桌面版主視覺、第二張大圖與 Final Images 主圖形成三個視覺重點；其餘圖片以較小寬度、較低對比與更長上下留白退居背景。手機版保留單欄閱讀，主圖仍完整佔據版面，次圖以較窄比例收斂；Filter、View、圖片編號、TOP 與前後案例導覽仍存在，沒有新增 Section、文字、圖片或動畫。TypeScript 與 production build 均通過。
