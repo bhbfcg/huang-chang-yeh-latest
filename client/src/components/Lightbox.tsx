@@ -26,6 +26,7 @@ type LightboxGalleryProps = {
   captions?: string[];
   categories?: GalleryCategory[][];
   filterable?: boolean;
+  layout?: "default" | "editorial";
 };
 
 export default function LightboxGallery({
@@ -37,6 +38,7 @@ export default function LightboxGallery({
   captions = [],
   categories = [],
   filterable = false,
+  layout = "default",
 }: LightboxGalleryProps) {
   const galleryRef = useScrollReveal<HTMLElement>();
   const [open, setOpen] = useState(false);
@@ -93,17 +95,19 @@ export default function LightboxGallery({
   };
 
   return (
-    <section ref={galleryRef} className="lightbox-gallery-section reveal" aria-label={`${altPrefix} 圖片故事`}>
-      <div className="magazine-gallery-head">
-        <div className="magazine-gallery-index">
-          <span className="section-label">{galleryLabel}</span>
-          <span className="magazine-gallery-count">{String(images.length).padStart(2, "0")}</span>
+    <section ref={galleryRef} className={`lightbox-gallery-section reveal ${layout === "editorial" ? "lightbox-gallery-editorial" : ""}`} aria-label={`${altPrefix} 圖片故事`}>
+      {layout === "default" && (
+        <div className="magazine-gallery-head">
+          <div className="magazine-gallery-index">
+            <span className="section-label">{galleryLabel}</span>
+            <span className="magazine-gallery-count">{String(images.length).padStart(2, "0")}</span>
+          </div>
+          <div className="magazine-gallery-copy">
+            <h2>{galleryTitle}</h2>
+            <p>{galleryIntro}</p>
+          </div>
         </div>
-        <div className="magazine-gallery-copy">
-          <h2>{galleryTitle}</h2>
-          <p>{galleryIntro}</p>
-        </div>
-      </div>
+      )}
 
       {filterable && categories.length > 0 && (
         <div className="gallery-filter-bar" role="toolbar" aria-label={`${altPrefix} 圖片分類篩選`}>

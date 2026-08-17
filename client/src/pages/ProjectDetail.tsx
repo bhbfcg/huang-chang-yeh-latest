@@ -16,7 +16,7 @@ type ProjectDetailData = {
   categories?: GalleryCategory[][];
 };
 
-const detailData: Record<string, ProjectDetailData> = {
+export const detailData: Record<string, ProjectDetailData> = {
   "teahouse-graduation-project": {
     intro: "A tea house shaped by pause and ritual.",
     body: "以茶席、行走與停留作為空間秩序，將東方茶文化中的慢、靜與層次轉譯成入口、長廊、座席與服務空間。木格柵、暖色燈光與低尺度家具共同建立較內向的氛圍，使飲茶成為一段從城市節奏中慢下來的過程。",

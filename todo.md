@@ -82,7 +82,19 @@
 - [x] 加入分類標籤點擊篩選與篩選後的雜誌式重新排版
 - [x] 為茶藝館案例加入右下角平滑回到頂部懸浮按鈕
 - [x] 驗證篩選、Lightbox、回到頂部、手機版與 production build
-- [ ] 為三個茶藝館分類加入極簡圖示與專屬色彩
-- [ ] 加入全部顯示／清除篩選快捷按鈕
-- [ ] 在 Lightbox 底部顯示目前圖片對應的設計說明
-- [ ] 驗證分類、Lightbox、響應式與 GitHub／Netlify 同步準備
+- [x] 為三個茶藝館分類加入極簡圖示與專屬色彩
+- [x] 加入全部顯示／清除篩選快捷按鈕
+- [x] 在 Lightbox 底部顯示目前圖片對應的設計說明
+- [x] 驗證分類、Lightbox、響應式與 GitHub／Netlify 同步準備
+
+- [x] 盤點茶藝館案例頁現有文字、圖片順序、分類、Lightbox 與回頂功能
+- [x] 保留重新設計前穩定版本並完成 Editorial Case Study 版面規劃
+- [x] 重新設計茶藝館 Hero、Project Information、Section 與圖片閱讀節奏
+- [x] 更新茶藝館專屬 Typography、Grid、留白與 subtle animation
+- [x] 驗證茶藝館頁面互動、桌面／手機版與其他案例路由不受影響
+- [x] 建立重新設計版本 checkpoint 並交付
+- [ ] 待 Netlify operational credits 恢復後確認 GitHub 同步與正式部署
+
+- [ ] 重新設計後實際驗證 Hero→Lightbox、分類篩選、全部顯示、回到頂部與前後案例導覽
+- [ ] 檢查並記錄 Git 狀態、待同步檔案與 Netlify credits 阻塞狀態
+- [ ] 保存茶藝館重設計完成版 checkpoint 並交付摘要

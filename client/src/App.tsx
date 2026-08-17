@@ -13,6 +13,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Home = lazy(() => import("./pages/Home"));
 const Process = lazy(() => import("./pages/Process"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const TeahouseCaseStudy = lazy(() => import("./pages/TeahouseCaseStudy"));
 const Services = lazy(() => import("./pages/Services"));
 const Works = lazy(() => import("./pages/Works"));
 
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/works" component={Works} />
+      <Route path="/works/teahouse-graduation-project" component={TeahouseCaseStudy} />
       <Route path="/works/:slug" component={ProjectDetail} />
       <Route path="/services" component={Services} />
       <Route path="/process" component={Process} />
