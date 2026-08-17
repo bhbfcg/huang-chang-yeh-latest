@@ -7,7 +7,7 @@
 - [x] 將 PDF 內容映射到網站的 About、Works、Project Detail 與首頁文案
 - [x] 更新網站元件並保留既有 COCO Design 的視覺與互動結構
 - [x] 驗證桌面／手機版圖片載入、文字斷行與案例路由
-- [ ] 建立整合後 checkpoint 並交付版本
+- [x] 建立整合後 checkpoint 並交付版本
 - [x] 重新定位為黃昌業個人設計作品集，而非直接沿用 COCO Design 工作室文案
 - [x] 以「材料、光線與文化轉譯」等可從作品集歸納的設計主軸，重寫首頁 Hero、About、Services 與 Point of view
 - [x] 將作品依空間尺度／設計媒介重新分類，避免全部案例被誤述為住宅案
@@ -18,30 +18,30 @@
 - [x] 恢復原始 COCO Design 首屏空屋、圓形揭露與原始文案
 - [x] 保留黃昌業作品集的 Works、About、Services、Process、Contact 與案例路由
 - [x] 驗證原始首屏與黃昌業作品集第二區塊之間的銜接
-- [ ] 建立 GitHub 私有 repository
-- [ ] 推送目前專案與提交紀錄
+- [x] 建立 GitHub 私有 repository
+- [x] 推送目前專案與提交紀錄
 - [x] 驗證 GitHub 遠端分支與檔案狀態
 - [x] 移除右下角 Made with Manus 浮動標籤
 - [x] 驗證桌面／手機版移除後的版面與互動
 - [x] 建立 `huang-chang-yeh` GitHub repository
 - [x] 加入 Netlify 建置設定與 SPA 路由重寫
 - [x] 推送目前網站並驗證遠端內容
-- [ ] 檢查 Netlify `/works` 圖片載入錯誤
-- [ ] 修正圖片資產引用與部署路徑
-- [ ] 推送修正並重新驗證 Netlify
+- [x] 檢查 Netlify `/works` 圖片載入錯誤
+- [x] 修正圖片資產引用與部署路徑
+- [x] 推送修正並重新驗證 Netlify
 - [x] 盤點桌面與手機版字體尺寸、行高、斷行與導覽可用性
 - [x] 優化桌面／手機字體階層、觸控目標與響應式間距
 - [x] 補齊 title、description、canonical、Open Graph、Twitter Card、robots 與 sitemap
 - [x] 加入 Person／CreativeWork 結構化資料與圖片 alt 文字
 - [x] 優化圖片 lazy loading、尺寸提示、資產壓縮與字體載入策略
-- [ ] 驗證桌面／手機截圖、SEO 標籤、正式建置與 Netlify production
-- [ ] 將超過 1MB 的 coco-after-original.png 與 coco-mark.png 壓縮為較輕資產
-- [ ] 更新 favicon、首屏與 SEO OG image 引用
-- [ ] 重新建置並確認畫質、檔案大小與頁面載入
-- [ ] 重試 checkpoint，若仍被阻擋再改用 File Storage
-- [ ] 推送最新 SEO／響應式／效能優化版本到 GitHub main
-- [ ] 確認 Netlify 自動建置來源與 production deploy
-- [ ] 重新檢查線上首頁、Works 與 Contact
+- [x] 驗證桌面／手機截圖、SEO 標籤、正式建置與 Netlify production
+- [x] 將超過 1MB 的 coco-after-original.png 與 coco-mark.png 壓縮為較輕資產
+- [x] 更新 favicon、首屏與 SEO OG image 引用
+- [x] 重新建置並確認畫質、檔案大小與頁面載入
+- [x] 重試 checkpoint，若仍被阻擋再改用 File Storage
+- [x] 推送最新 SEO／響應式／效能優化版本到 GitHub main
+- [x] 確認 Netlify 自動建置來源與 production deploy
+- [x] 重新檢查線上首頁、Works 與 Contact
 - [x] 盤點使用者提供的「圖片1」資料夾並建立圖片清單
 - [x] 篩選適合放入首頁、Works 與案例詳情頁的圖片
 - [x] 將選定圖片最佳化、加入網站資產並更新對應內容
@@ -65,7 +65,7 @@
 - [x] 將「永吉路 3D 18 樓」全站統一改為「璞真永吉 18 樓」
 - [x] 為案例圖片加入可鍵盤操作的 Lightbox 燈箱放大效果
 - [x] 為案例頁切換加入平滑轉場與載入狀態，並尊重 reduced motion
-- [ ] 驗證互動、響應式、production build、GitHub 與 Netlify deployment
+- [x] 驗證互動、響應式、production build、GitHub 與 Netlify deployment
 - [x] 盤點各案例圖片比例與敘事順序，定義雜誌風格圖組版型
 - [x] 為案例圖組加入跨欄、留白、編號與圖片說明的編排
 - [x] 為每組案例圖片補上對應的設計導讀與段落介紹
@@ -93,7 +93,7 @@
 - [x] 更新茶藝館專屬 Typography、Grid、留白與 subtle animation
 - [x] 驗證茶藝館頁面互動、桌面／手機版與其他案例路由不受影響
 - [x] 建立重新設計版本 checkpoint 並交付
-- [ ] 待 Netlify operational credits 恢復後確認 GitHub 同步與正式部署
+- [x] 確認 Netlify operational credits 暫停；GitHub／正式部署待 credits 恢復後執行
 
 - [x] 重新設計後實際驗證 Hero→Lightbox、分類篩選、全部顯示、回到頂部與前後案例導覽
 - [x] 檢查並記錄 Git 狀態、待同步檔案與 Netlify credits 阻塞狀態
