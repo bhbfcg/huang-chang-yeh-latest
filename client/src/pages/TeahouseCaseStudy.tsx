@@ -27,10 +27,11 @@ export default function TeahouseCaseStudy() {
   const nextProject = portfolioProjects[(projectIndex + 1) % portfolioProjects.length];
   const images = [project.image, ...detail.gallery];
   const categories = detail.categories ?? [];
+  const imageOrder = [0, 3, 1, 5, 2, 7, 4, 8, 6, 10, 9, 11, 13, 12];
   const editorialSections = [
     { index: 0, label: "Atmosphere" },
-    { index: 3, label: "Material" },
-    { index: 7, label: "Space" },
+    { index: 4, label: "Material" },
+    { index: 8, label: "Space" },
     { index: 11, label: "Final images" },
   ];
 
@@ -97,6 +98,7 @@ export default function TeahouseCaseStudy() {
           <div className="teahouse-gallery">
             <LightboxGallery
               images={images}
+              imageOrder={imageOrder}
               altPrefix={project.title}
               galleryLabel="Visual archive / Tea house"
               galleryTitle=""

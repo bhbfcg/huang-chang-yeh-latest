@@ -115,3 +115,13 @@
 - [x] 調整大圖、留白、不對稱雙圖與不同寬度圖片比例，不新增內容或動畫
 - [x] 驗證只有茶藝館案例頁變更，其他案例與全站功能不受影響
 - [x] 保存 Layout 重構版本並具體交付改動說明
+
+- [x] 精簡 Section 標題與編號的視覺重量
+- [x] 拉大圖片尺寸差異並加入真正的 Full-width 視覺高潮
+- [x] 重新排序既有 14 張圖片，增加左右交替與大段留白
+- [x] 強化 Final Images 為第二個視覺高潮並降低 Filter／Lightbox／Progress bar／View 的 UI 存在感
+- [x] 驗證既有功能、手機版與其他案例／全站路由不受影響
+- [x] 保存第二輪 Layout Refinement checkpoint 並交付具體改動說明
+
+- [x] 實際操作驗證第二輪 Refinement 後的 Filter、Lightbox 開啟／切換、閱讀進度條與 View 控制；Filter／進度條並以 DOM、hook 與桌面／手機截圖交叉確認
+- [x] 完成互動驗證後再次確認手機版與其他案例路由未受專屬 CSS 與圖片重排影響

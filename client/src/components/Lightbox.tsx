@@ -19,6 +19,7 @@ const categoryOptions = [
 
 type LightboxGalleryProps = {
   images: string[];
+  imageOrder?: number[];
   altPrefix: string;
   galleryLabel?: string;
   galleryTitle?: string;
@@ -32,6 +33,7 @@ type LightboxGalleryProps = {
 
 export default function LightboxGallery({
   images,
+  imageOrder,
   altPrefix,
   galleryLabel = "Image sequence",
   galleryTitle = "A closer reading of the space.",
@@ -46,12 +48,15 @@ export default function LightboxGallery({
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState<GalleryCategory | "all">("all");
-  const items = useMemo(() => images.map((image, index) => ({
-    image,
-    caption: captions[index] ?? `View ${String(index + 1).padStart(2, "0")} / 空間視角`,
-    categories: categories[index] ?? [],
-    originalIndex: index,
-  })), [categories, captions, images]);
+  const items = useMemo(() => {
+    const order = imageOrder?.length ? imageOrder : images.map((_, index) => index);
+    return order.map((originalIndex) => ({
+      image: images[originalIndex],
+      caption: captions[originalIndex] ?? `View ${String(originalIndex + 1).padStart(2, "0")} / 空間視角`,
+      categories: categories[originalIndex] ?? [],
+      originalIndex,
+    })).filter((item): item is { image: string; caption: string; categories: GalleryCategory[]; originalIndex: number } => Boolean(item.image));
+  }, [categories, captions, imageOrder, images]);
   const displayedItems = useMemo(
     () => activeCategory === "all" ? items : items.filter((item) => item.categories.includes(activeCategory)),
     [activeCategory, items],
@@ -138,7 +143,7 @@ export default function LightboxGallery({
       <div className={`lightbox-gallery magazine-count-${Math.min(imageCount, 6)} ${activeCategory !== "all" ? "is-filtered" : ""}`}>
         {displayedItems.map((item, index) => {
           const alt = `${altPrefix} 高解析案例圖片 ${item.originalIndex + 1}`;
-          const section = editorialSections.find((entry) => entry.index === item.originalIndex);
+          const section = editorialSections.find((entry) => entry.index === index);
           return (
             <Fragment key={item.image}>
               {section && <div className="magazine-section-break" data-section-index={section.index}><span>{section.label}</span></div>}
@@ -154,7 +159,7 @@ export default function LightboxGallery({
                 <span className="lightbox-trigger-label"><Maximize2 size={13} /> View full image</span>
               </button>
               <figcaption className="magazine-caption">
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{String(item.originalIndex + 1).padStart(2, "0")}</span>
                 <span>{item.caption}</span>
               </figcaption>
               </figure>

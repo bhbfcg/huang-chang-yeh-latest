@@ -45,3 +45,29 @@ Netlify project overview 明確顯示：`cdc is now running on operational credi
 ## A／Linear Editorial × B／Quiet Archive 實作驗證
 
 本輪只修改茶藝館專屬元件與其 scoped CSS。桌面版已呈現大圖、留白、非對稱雙圖、置中圖與不同高度圖片的交替節奏；Mobile 版則收束為單欄，但保留寬度差、上下留白與章節分隔。Filter 仍保留在單一 Lightbox gallery 中，視覺重量降低；圖片與文字內容均沿用原有 14 張、既有圖說、既有分類與既有英文／中文文案。Works 與璞真永吉 18 樓案例截圖維持原本共用版面，未被茶藝館 CSS 污染。
+
+## 第二輪 Layout Refinement 驗證
+
+第二輪調整後，桌面版的首張主圖與 Final Images 段落都使用更接近 full-width 的比例，Material 與 Space 之間保留更長的空白，左右圖片也不再以同一種欄寬重複。手機版則收束為單欄，仍保留不同圖片比例與段落間距，沒有導入新動畫。Filter、Lightbox、Progress bar 與 View 控制仍存在，但在視覺上被壓低；Works 與璞真永吉 18 樓截圖維持原本共用版面。
+
+## Refinement 後實際頁面檢查
+
+重新載入茶藝館頁面後，實際頁面內容顯示 14 張既有圖片已按新的閱讀順序呈現：Atmosphere 為 01／04／02／06，Material 為 03／08／05／09，Space 為 07／11／10，Final images 為 12／14／13。Filter 的全部、空間動線、材質細節、光影變化與全部顯示仍存在；每張圖仍保留 VIEW FULL IMAGE、原圖說、TOP 與前後案例導覽。頁面總高度也隨留白增加，形成完整長篇案例閱讀流程。
+
+## 實際捲動檢查紀錄
+
+重新載入並捲動頁面後，實際 DOM 仍顯示 Filter 分類、全部顯示、14 張圖、各圖片 VIEW FULL IMAGE、TOP 與前後案例導覽；圖片順序與四個章節標記也與 Refinement 設計一致。此環境的預覽面板在部分滾動操作時未更新 viewport 位置，但頁面內容與頁面總高度已成功載入，未發現路由或控制項缺失。
+
+## Refinement 互動檢查補充
+
+在實際頁面中重新取得互動元素後，頁面底部可看到上一個／下一個案例與 TOP 按鈕；本輪已實際點擊 TOP，事件成功執行。返回圖組區域後，View full image 按鈕仍按新順序對應 12、14、13 等 Final images；頁面仍保留全部分類篩選控制。預覽環境的 viewport 更新較慢，因此以 DOM 內容與可點擊元素狀態作為本輪控制保留紀錄。
+
+最新預覽檢查後確認：頁面重新載入仍保留完整 14 張圖組、Filter 分類、主視覺 View、各圖 View full image、TOP 與前後案例導覽；預覽面板部分捲動操作未更新可視位置，因此不再重複捲動，改以已擷取的 DOM 與 build／截圖結果作為驗證依據。
+
+## Lightbox 實際操作驗證
+
+本輪實際點擊主視覺的 View Project Image 後，Lightbox 成功開啟；畫面顯示上一張／下一張與 Close 控制。點擊下一張後，圖片由庭院茶席切換至深色長廊，且底部圖說與 01—14 計數同步更新。按下 Escape 後 Lightbox 關閉，頁面回到原本的長篇案例位置。第二輪圖片重排沒有破壞既有 Lightbox 操作。
+
+最後一次預覽檢查仍顯示主視覺、完整 14 張圖組與 Filter／Lightbox／TOP／案例導覽內容存在；此預覽環境的滾動位置同步不穩定，已停止繼續捲動並以成功的 Lightbox 點擊／切換／Escape 實測、TypeScript、production build 與桌面／手機截圖完成驗證。
+
+本次從頂部嘗試跳到底部時，預覽面板仍未更新 viewport 位置，但完整頁面 markdown 仍可解析 Filter、全部顯示、14 張圖片與章節內容。由於 DOM 內容已完整且多次實測 Lightbox 成功，停止額外捲動，避免對預覽狀態造成干擾。
