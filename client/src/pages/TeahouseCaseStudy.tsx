@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, MoveDown } from "lucide-react";
 import { Link } from "wouter";
 import BackToTop from "@/components/BackToTop";
-import LightboxGallery, { type GalleryCategory } from "@/components/Lightbox";
+import LightboxGallery from "@/components/Lightbox";
 import { useParallax, useReadingProgress, useScrollReveal } from "@/hooks/useScrollReveal";
 import { detailData } from "./ProjectDetail";
 import { portfolioProjects } from "./Works";
@@ -11,7 +11,7 @@ const teahouseSlug = "teahouse-graduation-project";
 export default function TeahouseCaseStudy() {
   const project = portfolioProjects.find((item) => item.slug === teahouseSlug);
   const detail = detailData[teahouseSlug];
-  const heroRef = useParallax<HTMLButtonElement>(10);
+  const heroRef = useParallax<HTMLButtonElement>(8);
   const readingProgress = useReadingProgress();
   const infoRef = useScrollReveal<HTMLElement>();
   const conceptRef = useScrollReveal<HTMLElement>();
@@ -29,27 +29,20 @@ export default function TeahouseCaseStudy() {
   const categories = detail.categories ?? [];
   const imageOrder = [0, 3, 1, 5, 2, 7, 4, 8, 6, 10, 9, 11, 13, 12];
   const editorialSections = [
-    { index: 0, label: "Atmosphere" },
-    { index: 4, label: "Material" },
-    { index: 8, label: "Space" },
-    { index: 11, label: "Final images" },
+    { index: 5, label: "Material" },
+    { index: 10, label: "Final images" },
   ];
 
   return (
-    <div className="teahouse-case-page">
+    <div className="teahouse-case-page teahouse-image-led-page">
       <div className="teahouse-reading-progress" aria-label={`案例閱讀進度 ${Math.round(readingProgress * 100)}%`} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(readingProgress * 100)}>
         <span style={{ transform: `scaleX(${readingProgress})` }} />
       </div>
-      <header className="teahouse-hero">
+
+      <header className="teahouse-hero teahouse-image-first-hero">
         <div className="teahouse-hero-top">
           <Link className="teahouse-back-link" href="/works"><ArrowLeft size={14} /> Back to works</Link>
           <span className="teahouse-hero-index">{project.no} / {project.type}</span>
-        </div>
-
-        <div className="teahouse-hero-heading">
-          <span className="teahouse-kicker">Graduation Project / Interior Architecture</span>
-          <h1>TEAHOUSE</h1>
-          <p>{detail.intro}</p>
         </div>
 
         <button ref={heroRef} className="teahouse-hero-image-wrap" type="button" aria-label="放大查看：茶藝館主視覺" onClick={() => document.querySelector<HTMLButtonElement>(".teahouse-gallery .lightbox-trigger")?.click()}>
@@ -57,6 +50,10 @@ export default function TeahouseCaseStudy() {
           <span className="teahouse-hero-image-label">View project image <ArrowUpRight size={14} /></span>
         </button>
 
+        <div className="teahouse-hero-title-lockup">
+          <h1>TEAHOUSE</h1>
+          <span>Graduation Project</span>
+        </div>
         <div className="teahouse-hero-foot">
           <span>Interior architecture study</span>
           <span className="teahouse-scroll-cue"><MoveDown size={14} /> Scroll to explore</span>
@@ -65,8 +62,8 @@ export default function TeahouseCaseStudy() {
       </header>
 
       <main>
-        <section ref={infoRef} className="teahouse-information reveal">
-          <div className="teahouse-section-marker"><span>Project information</span><strong>00</strong></div>
+        <section ref={infoRef} className="teahouse-information teahouse-quiet-information reveal" aria-label="Project information">
+          <span className="teahouse-quiet-label">Project information</span>
           <dl className="teahouse-information-list">
             <div><dt>Title</dt><dd>{project.title}</dd></div>
             <div><dt>Type</dt><dd>{project.meta}</dd></div>
@@ -75,10 +72,9 @@ export default function TeahouseCaseStudy() {
           </dl>
         </section>
 
-        <section ref={conceptRef} className="teahouse-concept reveal">
-          <div className="teahouse-section-marker"><span>01 / Concept</span><strong>01</strong></div>
+        <section ref={conceptRef} className="teahouse-concept teahouse-editorial-insert reveal" aria-label="Concept">
           <div className="teahouse-concept-content">
-            <h2>Observe.<br />Translate.<br />Make clear.</h2>
+            <div className="teahouse-editorial-quote">Observe.<br />Translate.<br />Make clear.</div>
             <div className="teahouse-concept-copy">
               <p>{detail.body}</p>
               <Link className="teahouse-inline-link" href="/contact">Start a conversation <ArrowUpRight size={14} /></Link>
@@ -86,14 +82,10 @@ export default function TeahouseCaseStudy() {
           </div>
         </section>
 
-        <section ref={sequenceRef} className="teahouse-sequence reveal" aria-label="茶藝館圖片案例序列">
-          <div className="teahouse-sequence-intro">
-            <div className="teahouse-section-marker"><span>02—05 / Visual essay</span><strong>14</strong></div>
-            <div>
-              <span className="teahouse-kicker">Atmosphere / Material / Space / Final images</span>
-              <h2>{detail.galleryTitle}</h2>
-              <p>{detail.galleryIntro}</p>
-            </div>
+        <section ref={sequenceRef} className="teahouse-sequence teahouse-image-sequence reveal" aria-label="茶藝館圖片案例序列">
+          <div className="teahouse-sequence-intro teahouse-editorial-intro">
+            <span className="teahouse-quiet-label">{detail.galleryTitle}</span>
+            <p>{detail.galleryIntro}</p>
           </div>
           <div className="teahouse-gallery">
             <LightboxGallery
@@ -112,8 +104,8 @@ export default function TeahouseCaseStudy() {
           </div>
         </section>
 
-        <section ref={navigationRef} className="teahouse-navigation reveal" aria-label="案例快速導覽">
-          <div className="teahouse-section-marker"><span>Continue exploring</span><strong>06</strong></div>
+        <section ref={navigationRef} className="teahouse-navigation teahouse-quiet-navigation reveal" aria-label="案例快速導覽">
+          <span className="teahouse-quiet-label">Continue exploring</span>
           <div className="teahouse-navigation-links">
             <Link className="teahouse-navigation-card" href={`/works/${previousProject.slug}`} aria-label={`上一個案例：${previousProject.title}`}>
               <span><ArrowLeft size={14} /> Previous / {previousProject.no}</span>

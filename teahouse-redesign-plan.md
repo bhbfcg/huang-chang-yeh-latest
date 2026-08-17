@@ -75,3 +75,11 @@ Netlify project overview 明確顯示：`cdc is now running on operational credi
 ## 純 Visual Refinement 驗證
 
 正式同版預覽維持既有架構與內容。桌面版主視覺、第二張大圖與 Final Images 主圖形成三個視覺重點；其餘圖片以較小寬度、較低對比與更長上下留白退居背景。手機版保留單欄閱讀，主圖仍完整佔據版面，次圖以較窄比例收斂；Filter、View、圖片編號、TOP 與前後案例導覽仍存在，沒有新增 Section、文字、圖片或動畫。TypeScript 與 production build 均通過。
+
+## Image-led Architectural Editorial 重構驗證
+
+依附件規格完成茶藝館專屬頁的新視覺方向：Hero 先展示作品圖片，TEAHOUSE 與 Graduation Project 以錯位 lockup 疊在圖片邊緣；Project Information 改為無卡片的安靜資料列；Concept 改為大留白中的 Editorial Insert；14 張既有圖片以 100%、70%、60%、40% 等不對稱寬度交錯排列，並以 Material 與 Final images 兩個必要標記分段。正式本地 DOM 仍保留 Filter、全部顯示、View、Lightbox、Progress、TOP 與前後案例導覽；TypeScript、production build、桌面與手機截圖均通過。
+
+## Image-led Lightbox 實測
+
+在本地預覽重新載入新頁面後，實際點擊 Image-first Hero 的 View Project Image，Lightbox 成功開啟；畫面保留上一張／下一張、Close、圖片計數與底部 Design detail 圖說。這證明新 Hero 位置與既有 Lightbox 狀態仍正確連動。

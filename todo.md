@@ -132,3 +132,13 @@
 - [x] 保留 Filter／View／編號功能並降低 UI 視覺存在感
 - [x] 驗證不新增 Section、文字、圖片或動畫，且其他路由不受影響
 - [x] 保存 Visual Refinement checkpoint 並交付改動摘要
+
+- [x] 依附件規格重新規劃 Image-led Architectural Editorial 的茶藝館頁基線
+- [x] 以既有 14 張圖片建立 Hero／Anchor／Supporting／Detail 的非對稱序列
+- [x] 將 Concept 改為 Editorial Insert，降低 Section／Metadata／Filter 的模板感
+- [x] 保留既有 View／Lightbox／Progress／TOP／前後案例功能並降低 UI 重量
+- [x] 驗證手機版、既有內容限制與其他路由不受影響
+- [x] 保存附件規格導向的重構版本並交付具體 Layout 說明
+
+- [ ] 保存本輪 Image-led Architectural Editorial 茶藝館重構 checkpoint
+- [ ] 向使用者交付本輪具體 Layout 改動摘要（Hero、Project Information、Editorial Insert、圖片序列、UI 降噪）
