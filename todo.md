@@ -166,3 +166,7 @@
 - [x] 實際點擊並驗證 Composition 版型下的 Filter 切換與全部顯示重置
 - [x] 實際驗證 TOP 回頂與閱讀進度條在捲動後的比例變化
 - [x] 在手機正式頁實測 Lightbox／Filter／TOP，並保存本輪 Composition System checkpoint
+
+- [ ] 確認目前最新版本與 GitHub 遠端 repository／分支設定
+- [ ] 將最新 Teahouse Composition 版本提交並推送到 GitHub
+- [ ] 驗證 GitHub 遠端提交、分支與工作區狀態
