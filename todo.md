@@ -170,3 +170,7 @@
 - [ ] 確認目前最新版本與 GitHub 遠端 repository／分支設定
 - [ ] 將最新 Teahouse Composition 版本提交並推送到 GitHub
 - [ ] 驗證 GitHub 遠端提交、分支與工作區狀態
+
+- [ ] 確認獨立 GitHub repository 名稱與目前最新版本狀態
+- [ ] 建立新的私有 GitHub repository 並推送最新版本
+- [ ] 驗證新 repository 的遠端分支、最新提交與網址
